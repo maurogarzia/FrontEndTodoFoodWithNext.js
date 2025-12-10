@@ -1,0 +1,24 @@
+.containerPrincipal{
+    background-color: #282828;
+    display: flex;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+    height: 30vh;
+}
+.title{
+    font-size: 35px;
+    color: #E95708;
+    font-weight: bolder;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 1005;
+    padding: 10px;
+}
+.subtitle{
+    font-size: 25px;
+
+}

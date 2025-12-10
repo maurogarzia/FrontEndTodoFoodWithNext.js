@@ -1,0 +1,54 @@
+.containerPrincipal{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    background-color: #444444;
+    color: white;
+}
+.containerPrincipal h1{
+    padding: 10px;
+    font-size: 35px;
+    color: #E95708;
+    font-weight: bolder;
+    width: 20%;
+    cursor: pointer;
+}
+.items{
+    display: flex;
+    padding: 10px;
+    width: 50%;
+    
+}
+.items p{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+.items p:hover{
+    background-color: #737373;
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    width: 20%;
+}
+.search input{
+    background-color: white;
+    color: black;
+    padding: 2px;
+    border: none;
+    outline: none;
+}
+.containerAccount{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.containerAccount span{
+    cursor: pointer;
+}
