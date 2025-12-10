@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import style from './Header.module.css'
 import ItemsResponsive from './HeaderComponents/ItemsResponsive/ItemsResponsive'
+import Link from 'next/link'
+import { Routes } from '@/routes/routes'
 
 
 function Header() {
@@ -11,11 +13,12 @@ function Header() {
     return (
         <div>
             <div className={style.containerPrincipal}>
-                <h1>TodoFood</h1>
+                <Link className={style.title} href={Routes.HOME}><h1>TodoFood</h1></Link>
                 <div className={style.items}>
-                    <p>Promociones</p>
-                    <p>Productos</p>
-                    <p>Sucursales</p>
+                    <Link className={style.item} href={Routes.PROMOTIONS}>Promociones</Link>
+                    <Link className={style.item} href={Routes.PRODUCTS}>Productos</Link>
+                    <Link className={style.item} href={Routes.SUCURSALES}>Sucursales</Link>
+                    
                 </div>
 
                 <div className={style.search}>

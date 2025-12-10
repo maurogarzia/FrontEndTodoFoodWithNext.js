@@ -9,13 +9,14 @@
     overflow-x: hidden;
     z-index: 3;
 }
-.containerPrincipal h1{
+.title{
     padding: 10px;
-    font-size: 35px;
+    font-size: 20px;
     color: #E95708;
     font-weight: bolder;
     width: 20%;
     cursor: pointer;
+    text-decoration: none;
 }
 .items{
     display: flex;
@@ -23,12 +24,14 @@
     width: 50%;
     
 }
-.items p{
+.item{
     width: 100%;
     text-align: center;
     padding: 5px;
+    color: white;
+    text-decoration: none;
 }
-.items p:hover{
+.item:hover{
     background-color: #737373;
     cursor: pointer;
 }
