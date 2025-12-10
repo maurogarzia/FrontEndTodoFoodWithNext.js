@@ -5,6 +5,8 @@
     color: white;
     padding: 20px;
     height: 30vh;
+    min-width: 100vw;
+    overflow-x: hidden;
 }
 .title{
     font-size: 35px;

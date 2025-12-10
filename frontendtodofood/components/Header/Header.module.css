@@ -6,6 +6,8 @@
     height: 12vh;
     background-color: #444444;
     color: white;
+    overflow-x: hidden;
+    z-index: 3;
 }
 .containerPrincipal h1{
     padding: 10px;
@@ -51,4 +53,35 @@
 }
 .containerAccount span{
     cursor: pointer;
+}
+.viewResponsive{
+    display: none;
+}
+.ItemsResponsive{
+    position: absolute;
+    height: 89%;
+    width: 100%;
+    top: 90px;
+    background-color: rgba(0, 0, 0, 0.552);
+}
+
+@media (max-width: 800px) {
+    .items,
+    .search,
+    .containerAccount{
+        display: none;
+    }
+    .viewResponsive{
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    .viewResponsive span{
+        font-size: 30px;
+    }
+    .containerPrincipal h1{
+        width: 100%;
+        font-size: 40px;
+    }
 }
