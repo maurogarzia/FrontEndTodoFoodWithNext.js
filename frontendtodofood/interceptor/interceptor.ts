@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 const router = useRouter()
 
 // Creo la instancia
-const axiosInstance = axios.create({
+export const axiosInstance = axios.create({
     baseURL: process.env.NEXT_PUBLIC_BASE_URL
 })
 
