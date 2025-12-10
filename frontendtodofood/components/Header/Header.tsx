@@ -27,7 +27,9 @@ function Header() {
                 </div>
 
                 <div className={style.containerAccount}>
-                    <span className="material-symbols-outlined">account_circle</span>
+                    <Link className={style.account} href={Routes.PROFILE}>
+                        <span className="material-symbols-outlined">account_circle</span>
+                    </Link>
                 </div>
 
                 <div className={style.viewResponsive}>
