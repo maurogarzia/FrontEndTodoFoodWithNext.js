@@ -1,0 +1,64 @@
+.containerPrincipal{
+    background-color: #585858;
+    min-height: 58vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.title{
+    padding: 10px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.label{
+    font-size: 20px;
+}
+.data input{
+    padding: 5px;
+    outline: none;
+}
+.button{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+.button button{
+    background-color: #E95708;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button button:hover{
+    background-color: white;
+    color: #E95708;
+    transition: 0.3s ease;
+}
+.register{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+.link{
+    
+    color: white;
+}
+.link:hover{
+    color: #E95708;
+}

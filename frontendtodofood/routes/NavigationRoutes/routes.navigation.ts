@@ -3,6 +3,8 @@ export const Routes = {
     PRODUCTS: '/products',
     PROMOTIONS: '/promotions',
     PROFILE: '/profile',
-    SUCURSALES: '/branches'
+    SUCURSALES: '/branches',
+    LOGIN: '/login',
+    REGISTER: '/register'
 }
 
