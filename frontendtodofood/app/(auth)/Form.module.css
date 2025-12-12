@@ -20,13 +20,14 @@
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-.label{
-    font-size: 20px;
+    width: 350px;
 }
 .data input{
     padding: 5px;
     outline: none;
+}
+.label{
+    font-size: 20px;
 }
 .button{
     text-align: center;
@@ -48,10 +49,12 @@
     color: #E95708;
     transition: 0.3s ease;
 }
-.register{
+.registerAndRegister{
     padding: 10px;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
     margin-top: 20px;
 }
