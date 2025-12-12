@@ -14,11 +14,21 @@ function Footer() {
             </div>
             <div className={style.column}>
                 <p  className={style.subtitle}>Redes Sociales</p>
-                <p>@todofood</p>
-                <p>todoFood</p>
+                <div className={style.social}>
+                    <span className="fab fa-instagram"></span>
+                    <p>@todofood</p>
+                </div>
+                <div className={style.social}>
+                    <span className="fab fa-facebook"></span>
+                    <p>todoFood</p>
+                </div>
+                <div className={style.social}>
+                    <span className="fab fa-whatsapp"></span>
+                    <p>2616938666</p>
+                </div>
             </div>
             <div className={style.column}>
-                <p  className={style.subtitle}>Mi cuenta</p>
+                <p className={style.subtitle}>Mi cuenta</p>
                 <p>Inicar Sesión</p>
                 <p>Pedir</p>
             </div>

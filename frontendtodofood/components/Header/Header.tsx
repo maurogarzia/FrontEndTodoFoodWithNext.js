@@ -3,7 +3,7 @@ import { useState } from 'react'
 import style from './Header.module.css'
 import ItemsResponsive from './HeaderComponents/ItemsResponsive/ItemsResponsive'
 import Link from 'next/link'
-import { Routes } from '@/routes/routes'
+import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
 
 
 function Header() {
