@@ -67,6 +67,12 @@
 }
 .error{
     color: red;
+    background-color: white;
+    padding: 2px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bolder;
 }
 @media (max-width: 800) {
     .containerPrincipal{

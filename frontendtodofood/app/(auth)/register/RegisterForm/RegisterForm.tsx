@@ -6,9 +6,10 @@ import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
 import { useState, useTransition } from 'react'
 import { IRegister } from '@/types/auth/register.model'
 import { Rol } from '@/types/enums/Rol'
-import { register } from '@/services/auth/auth.service'
+
 import { Router } from 'next/router'
 import { useRouter } from 'next/navigation'
+import { register } from '@/services/auth/auth.service'
 
 function RegisterForm() {
 
@@ -63,17 +64,17 @@ function RegisterForm() {
                     <input type="text" name='lastname' placeholder='Doe'/>
 
                     <label className={style.label}>Email</label>
-                    <input type="text" name='email' placeholder='JhonDoe@example.com'/>
+                    <input type="email" name='email' placeholder='JhonDoe@example.com'/>
 
                     <label className={style.label}>Nombre de usuario</label>
                     <input type="text" name='username' placeholder='JhonDoe_17'/>
 
                     <label className={style.label}>Contraseña</label>
-                    <input type="text" name='password' placeholder='1234'/>
+                    <input type="password" name='password' placeholder='1234'/>
                 </div>
                 <div className={style.button}>
                     <button disabled={pending}>
-                        {pending ? 'Cargando' : 'Registrando'}
+                        {pending ? 'Cargando' : 'Registrar'}
                     </button>
                 </div>
                 <div className={style.registerAndRegister}>

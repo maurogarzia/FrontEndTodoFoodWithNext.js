@@ -1,0 +1,40 @@
+.dataAccess{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    padding: 10px;
+
+}
+.paragraph{
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.title{
+    display: flex;
+    font-size: 35px;
+    gap: 20px;
+}
+.title button{
+    background-color: #585858;
+    color: white;
+    width: 80px;
+    border: 1px solid #585858;
+    cursor: pointer;
+}
+.title button:hover{
+    background-color: white;
+    border: 1px solid #585858;
+    color: #585858;
+
+}
+
+@media (max-width: 800px) {
+    .title{
+        font-size: 30px;
+    }
+}
