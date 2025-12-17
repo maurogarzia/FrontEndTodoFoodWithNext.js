@@ -1,7 +1,7 @@
 import { IPromotion, IRequestPromotion } from "@/types/models/Promotions.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
 
-const BASE_PROMOTIONS = `${process.env.NEXT_PUBLIC_BASE_URL}/promotions`
+const BASE_PROMOTIONS = `${process.env.NEXT_PUBLIC_BASE_URL}/promotion`
 
 export const getAllPromotions = () : Promise<IPromotion[]> => {
     return getAll<IPromotion>(BASE_PROMOTIONS)

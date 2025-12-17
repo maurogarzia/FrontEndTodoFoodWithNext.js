@@ -1,7 +1,7 @@
 import { IProducts, IRequestProducts } from "@/types/models/Product.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
 
-const BASE_PRODUCTS = `${process.env.NEXT_PUBLIC_BASE_URL}/products`
+const BASE_PRODUCTS = `${process.env.NEXT_PUBLIC_BASE_URL}/product`
 
 export const getAllProducts = () : Promise<IProducts[]> => {
     return getAll<IProducts>(BASE_PRODUCTS)

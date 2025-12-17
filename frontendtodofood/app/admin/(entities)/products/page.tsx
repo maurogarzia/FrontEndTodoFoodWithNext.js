@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllProducts } from "@/services/entities/products/products.service"
+import ProductsAdmin from "./ProductsAdmin"
 
-function Products() {
+async function getData() {
+  return getAllProducts()
+}
+
+async function Products() {
+
+  const products = await getData()
+
   return (
-    <div>Products</div>
+    <ProductsAdmin products={products}/>
   )
 }
 

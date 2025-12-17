@@ -12,7 +12,7 @@ function Aside() {
             <Link className={style.link} href={AdminRoutes.PRODUCTS}>Productos</Link>
             <Link className={style.link} href={AdminRoutes.PRODUCT_DETAIL}>Detalle Producto</Link>
             <Link className={style.link} href={AdminRoutes.PROMOTIONS}>Promociones</Link>
-            <Link className={style.link} href={AdminRoutes.PROMOTION_DETAIL}>Detalle Promoción</Link>
+            <Link className={style.link} href={AdminRoutes.PROMOTION_DETAILS}>Detalle Promoción</Link>
             <Link className={style.link} href={AdminRoutes.UNIT_DETAILS}>Detalles Unitarios</Link>
             <Link className={style.link} href={AdminRoutes.IMAGES}>Imágenes</Link>
             <Link className={style.link} href={AdminRoutes.USERS}>Usuarios</Link>

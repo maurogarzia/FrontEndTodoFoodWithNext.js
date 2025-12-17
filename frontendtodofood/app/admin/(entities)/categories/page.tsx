@@ -1,4 +1,6 @@
-
+async function getData() {
+  
+}
 
 function Categories() {
   return (

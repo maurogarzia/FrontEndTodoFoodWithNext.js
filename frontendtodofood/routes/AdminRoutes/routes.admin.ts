@@ -19,7 +19,7 @@ export const AdminRoutes = {
 
     // Promociones
     PROMOTIONS: '/admin/promotions',
-    PROMOTION_DETAIL: 'admin/promotion-details',
+    PROMOTION_DETAILS: '/admin/promotion-details',
 
     // Detalles Unitarios
     UNIT_DETAILS: '/admin/unit-details',

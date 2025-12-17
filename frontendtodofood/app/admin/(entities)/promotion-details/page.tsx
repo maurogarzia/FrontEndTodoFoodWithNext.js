@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllPromotionDetails } from "@/services/entities/promotionDetails/promotionDetails.service"
+import PromotionDetailsAdmin from "./PromotionDetailsAdmin"
 
-function PromotionDetails() {
+async function getData(){
+  return await getAllPromotionDetails()
+}
+
+async function PromotionDetails() {
+
+  const promotionDetails = await getData()
+
   return (
-    <div>PromotionDetails</div>
+    <PromotionDetailsAdmin promotionDetails={promotionDetails}/>
   )
 }
 

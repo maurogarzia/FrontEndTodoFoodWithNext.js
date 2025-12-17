@@ -10,7 +10,7 @@ async function Provinces() {
   const provinces = await getData()
 
   return (
-    <ProvincesAdmin/>
+    <ProvincesAdmin provinces={provinces}/>
   )
 }
 
