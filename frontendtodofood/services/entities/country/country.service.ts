@@ -1,7 +1,7 @@
 import { ICountry } from "@/types/models/Country,model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
 
-const BASE_COUNTRY = `${process.env.NEXT_PUBLIC_BASE_URL}/countries`
+const BASE_COUNTRY = `${process.env.NEXT_PUBLIC_BASE_URL}/country`
 
 export const getAllCountries = () : Promise<ICountry[]> => {
     return getAll<ICountry>(BASE_COUNTRY)

@@ -3,12 +3,14 @@ import { cookies } from "next/headers"
 
 async function getToken() {
     const cookieStore = await cookies()
-    cookieStore.get("token")?.value
+    const token =cookieStore.get("auth_token")?.value
+    console.log("TOKEN encontrado: ", token);
+    
 }
 
 
 export const getAll = async <T> (url: string) : Promise<T[]>=> {
-    const token = getToken()
+    const token = await getToken()
     const response = await fetch(url, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -16,9 +18,16 @@ export const getAll = async <T> (url: string) : Promise<T[]>=> {
         cache: 'no-store',
     })   
 
-    if (!response.ok) throw new Error("Error en GET ALL")
+    console.log(response);
     
-        return response.json()
+
+    if (!response.ok) {
+        const text = await response.text()
+        console.error("GET ALL failed:", response.status, text)
+        throw new Error("Error en GET ALL")
+    }
+    
+    return response.json()
 }
 
 export const getById = async <T> (url: string, id: number) : Promise<T>=> {
