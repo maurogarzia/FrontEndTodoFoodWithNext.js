@@ -3,7 +3,7 @@
 import { ICountry } from '@/types/models/Country,model'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
-import style from './CountriesAdmin.module.css'
+import style from '../EntityAdmin.module.css'
 import Buttons from '../../components/Buttons/Buttons'
 
 interface CountriesAdminProps {
