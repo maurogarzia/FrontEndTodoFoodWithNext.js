@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllUnitaryDetails } from "@/services/entities/unitaryDetails/unitaryDetails.service"
+import UnitDetailsAdmin from "./UnitDetailsAdmin"
 
-function UnitDetails() {
+async function getData() {
+  return await getAllUnitaryDetails()
+}
+
+async function UnitDetails() {
+
+  const unitaryDetails = await getData()
+
   return (
-    <div>UnitDetails</div>
+    <UnitDetailsAdmin unitDetails={unitaryDetails}/>
   )
 }
 

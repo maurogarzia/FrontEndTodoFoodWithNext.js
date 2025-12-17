@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllImages } from '@/services/entities/images/images.service'
+import ImagesAdmin from './ImagesAdmin'
 
-function Images() {
+async function getData(){
+  return await getAllImages()
+}
+
+async function Images() {
+
+  const images = await getData()
+
   return (
-    <div>Images</div>
+    <ImagesAdmin images={images}/>
   )
 }
 

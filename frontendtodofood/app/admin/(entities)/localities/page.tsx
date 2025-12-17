@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllLocalities } from "@/services/entities/locality/locatlity.service"
+import LocalitiesAdmin from "./LocalitiesAdmin"
 
-function Localities() {
+async function getData() {
+  return await getAllLocalities()
+}
+
+async function Localities() {
+
+  const localities = await getData()
+
   return (
-    <div>Localities</div>
+    <LocalitiesAdmin localities={localities}/>
   )
 }
 

@@ -1,10 +1,16 @@
+import { getAllCategories } from "@/services/entities/category/category.service"
+import CategoriesAdmin from "./CategoriesAdmin"
+
 async function getData() {
-  
+  return await getAllCategories()
 }
 
-function Categories() {
+async function Categories() {
+
+  const categories = await getData()
+
   return (
-    <div>Categories</div>
+    <CategoriesAdmin categories={categories}/>
   )
 }
 

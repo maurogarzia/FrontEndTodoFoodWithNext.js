@@ -2,7 +2,7 @@ import { getAllProducts } from "@/services/entities/products/products.service"
 import ProductsAdmin from "./ProductsAdmin"
 
 async function getData() {
-  return getAllProducts()
+  return await getAllProducts()
 }
 
 async function Products() {

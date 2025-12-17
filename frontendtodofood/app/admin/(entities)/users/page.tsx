@@ -1,8 +1,16 @@
-import React from 'react'
+import { getAllUsers } from "@/services/entities/users/users.service"
+import UsersAdmin from "./UsersAdmin"
 
-function Users() {
+async function getData() {
+  return await getAllUsers()
+}
+
+async function Users() {
+
+  const users = await getData() 
+
   return (
-    <div>Users</div>
+    <UsersAdmin users={users}/>
   )
 }
 

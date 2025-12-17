@@ -15,7 +15,7 @@ export const AdminRoutes = {
     LOCALITY: '/admin/localities',
 
     // Dirección
-    ADDRESS: '/address',
+    ADDRESS: '/admin/address',
 
     // Promociones
     PROMOTIONS: '/admin/promotions',

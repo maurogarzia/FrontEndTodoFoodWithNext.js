@@ -1,8 +1,16 @@
+import { getAllAddresses } from "@/services/entities/address/address.service"
+import AddressAdmin from "./AddressAdmin"
 
+async function getData() {
+    return await getAllAddresses()
+}
 
-function Address() {
+async function Address() {
+
+    const addresses = await getData()
+
     return (
-        <div>Address</div>
+        <AddressAdmin addresses={addresses}/>
     )
 }
 
