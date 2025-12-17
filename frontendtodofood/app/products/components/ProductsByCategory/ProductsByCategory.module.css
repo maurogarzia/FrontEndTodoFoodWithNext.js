@@ -1,0 +1,17 @@
+.containerPrincipal{
+    padding: 10px;
+    width: 100%;
+}
+.title{
+    padding: 10px;
+    font-size: 30px;
+    color: #E95708;
+}
+.empty{
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
+.cards{
+    padding: 15px;
+}
