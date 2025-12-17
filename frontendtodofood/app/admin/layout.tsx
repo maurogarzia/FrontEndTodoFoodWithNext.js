@@ -1,5 +1,5 @@
 import Aside from "./components/Aside/Aside"
-import style from './AdminLayout.module.css'
+import style from './Admin.module.css'
 
 interface Props {
     children: React.ReactNode
