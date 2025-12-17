@@ -1,0 +1,22 @@
+.containerPrincipal{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.button{
+    background-color: #E95708;
+    border: 1px solid #E95708;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    width: 50%;
+    cursor: pointer;
+    font-size: 15px;
+}
+.button:hover{
+    background-color: white;
+    color: #E95708;
+    border: 1px solid #E95708;
+    transition: 0.2s ease;
+}
