@@ -28,6 +28,7 @@ async function Products() {
 
   return (
     <div className={style.containerPrincipal}>
+      <p className={style.title}>Productos</p>
       <ProductsByCategory title={'Hamburguesas'} products={burguers}/>
       <ProductsByCategory title={'Vegetariano'} products={veggie}/>
       <ProductsByCategory title={'Acompañamientos'} products={accompaniment}/>

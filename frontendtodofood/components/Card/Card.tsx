@@ -15,9 +15,14 @@ function Card({name, image, category} : Props) {
 
   return (
     <div className={style.containerPrincipal}>
-      <p>{name}</p>
-      <Image height={40} width={40} src={image.url} alt=""/>
-      <button>Pedir</button>
+
+      <p className={style.title}>{name}</p>
+
+      <div className={style.image}>
+        <Image height={300} width={300} src={image.url} alt=""/>
+      </div>
+
+      <button className={style.button}>Pedir</button>
     </div>
   )
 }

@@ -4,8 +4,9 @@
 }
 .title{
     padding: 10px;
-    font-size: 30px;
+    font-size: 40px;
     color: #E95708;
+    font-weight:bold;
 }
 .empty{
     color: white;
