@@ -31,9 +31,9 @@ function LoginForm() {
                     </div>
 
                     <label className={style.label}>Nombre de usuario</label>
-                    <input type="text" name='username' placeholder='JhonDoe_17'/>
+                    <input type="text" name='username' required={true} placeholder='JhonDoe_17'/>
                     <label className={style.label}>Contraseña</label>
-                    <input type="password" name='password' placeholder='1234'/>
+                    <input type="password" name='password' required={true} placeholder='1234'/>
                 </div>
                 <div className={style.button}>
                     <button >
