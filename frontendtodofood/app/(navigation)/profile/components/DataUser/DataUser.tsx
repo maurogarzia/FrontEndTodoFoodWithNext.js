@@ -12,7 +12,7 @@ function DataUser() {
     return (
         <div className={style.containerPrincipal}>
             <div className={style.data}>
-                <Image width={80} height={80} alt='' src=''/>
+                {/* <Image width={80} height={80} alt='' src=''/> */}
                 <p>Nombre y Apellido</p>
                 <p>username</p>
                 <form action={logout}>

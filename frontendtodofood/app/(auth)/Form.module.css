@@ -65,11 +65,15 @@
 .link:hover{
     color: #E95708;
 }
+.containerError{
+    min-height: 5vh;
+    
+}
 .error{
-    color: red;
-    background-color: white;
+    color: white;
+    background-color: red;
     padding: 2px;
-    width: 100%;
+    height: 3vh;
     text-align: center;
     border-radius: 5px;
     font-weight: bolder;

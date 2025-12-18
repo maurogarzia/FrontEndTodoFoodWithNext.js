@@ -3,26 +3,32 @@
 import Link from 'next/link'
 import style from '../../Form.module.css'
 import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
-import React, { useState, useTransition } from 'react'
+import React, { useActionState, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { loginActions } from '../actions'
+import { useFormState } from 'react-dom'
 
+
+const initialState = {error : ""}
 
 function LoginForm() {
 
-    const [pending, startTransition] = useTransition()
-    const [error, setError] = useState<string>("")
 
-    
+
+    const [state, formAction] = useActionState(loginActions, initialState)
 
     return (
         <div className={style.containerPrincipal}>
             <p className={style.title}>Iniciar Sesión</p>
 
-            <form action={loginActions} className={style.form}>
+            <form action={formAction} className={style.form}>
                 <div className={style.data}>
 
-                    {error && <p className={style.error}>{error}</p>}
+                    <div className={style.containerError}>
+                        {state?.error && (
+                            <p className={style.error}>{state.error}</p>
+                        )}
+                    </div>
 
                     <label className={style.label}>Nombre de usuario</label>
                     <input type="text" name='username' placeholder='JhonDoe_17'/>
@@ -30,8 +36,8 @@ function LoginForm() {
                     <input type="password" name='password' placeholder='1234'/>
                 </div>
                 <div className={style.button}>
-                    <button disabled={pending}>
-                        {pending ? 'Cargando' : 'Inicar Sesión'}
+                    <button >
+                        Inicar Sesión
                     </button>
                 </div>
                 <div className={style.registerAndRegister}>

@@ -14,7 +14,11 @@ export async function login(req: ILogin ) {
             cache: "no-store"
         })
     
-        if (!response.ok) throw new Error('Credenciales invalidas')
+        if (!response.ok) {
+            return {
+                error: 'Credenciales inválidas'
+            }
+        }
         
         const data = await response.json()
         return data

@@ -3,9 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 const BASE_REGISTER = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/register`
 
-export const POST = async(request : NextRequest) => {
+export const register = async(request : IRegister) => {
     try {
-        const body : IRegister = await request.json()
+        const body : IRegister = request
 
         const res = await fetch(BASE_REGISTER, {
             method: "POST",
@@ -15,7 +15,11 @@ export const POST = async(request : NextRequest) => {
 
         const data = await res.json();
 
-        if (!res.ok) return NextResponse.json({ error: data || "Error al registrar usuario" }, { status: res.status });
+        if (!res.ok) {
+            return{
+                error: 'No se pudo registrar, intentalo de nuevo!'
+            }
+        };
         
         return data
 
