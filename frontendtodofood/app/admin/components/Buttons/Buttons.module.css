@@ -6,7 +6,7 @@
 }
 .button{
     background-color: #E95708;
-    border: 1px solid #E95708;
+    border: none;
     border-radius: 5px;
     padding: 5px;
     color: white;
@@ -17,6 +17,6 @@
 .button:hover{
     background-color: white;
     color: #E95708;
-    border: 1px solid #E95708;
+    
     transition: 0.2s ease;
 }

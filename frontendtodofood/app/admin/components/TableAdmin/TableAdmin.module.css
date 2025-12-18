@@ -17,5 +17,6 @@
 .value{
     text-align: center;
     padding: 5px;
-    
+    overflow-x: auto;
+    max-width: 250px;
 }
