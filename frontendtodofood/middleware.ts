@@ -1,76 +1,40 @@
-import { NextRequest, NextResponse } from "next/server"
-import jwt from 'jsonwebtoken'
-import { Rol } from "./types/enums/Rol"
-import { Routes } from "./routes/NavigationRoutes/routes.navigation"
-import { AdminRoutes } from "./routes/AdminRoutes/routes.admin"
+import { NextRequest, NextResponse } from 'next/server'
+import { jwtDecode } from 'jwt-decode'
+import { Routes } from './routes/NavigationRoutes/routes.navigation'
+import { Role } from './types/enums/Rol'
 
-type JtwPayload = {
-    sub : string,
-    role: "ADMIN" | "CUSTOMER"
+type JwtPayload = {
+    sub: string
+    role: Role
 }
 
-const PUBLIC_ROUTES = [
-    Routes.HOME,
-    Routes.PRODUCTS,
-    Routes.PROMOTIONS,
-    Routes.SUCURSALES,
-    Routes.LOGIN,
-    Routes.REGISTER
-]
-const AUTH_ROUTES = [Routes.PROFILE]
-
-const ADMIN_ROUTES = Object.values(AdminRoutes)
-
-
-export const middleware = (request : NextRequest) => {
+export function middleware(request: NextRequest) {
     const token = request.cookies.get('auth_token')?.value
-    const {pathname} = request.nextUrl
+    const { pathname } = request.nextUrl
 
-    // Dejo pasar las rutas publicas
-    if (PUBLIC_ROUTES.includes(pathname)) return NextResponse.next()
-
-    //Rutas protegidas
-    if (!token && ((AUTH_ROUTES.includes(pathname)) || ADMIN_ROUTES.includes(pathname))){
-        return NextResponse.redirect(new URL(Routes.LOGIN, request.nextUrl))
+  // Perfil requiere login
+    if (pathname === Routes.PROFILE && !token) {
+        return NextResponse.redirect(new URL(Routes.LOGIN, request.url))
     }
 
+    if (!token) {
+        return NextResponse.redirect(new URL(Routes.LOGIN, request.url))
+    }
 
-    const allCookies = request.cookies.getAll()
+    try {
+        const decoded = jwtDecode<JwtPayload>(token)
 
-    console.log(
-        token,
-        '[MW]',
-        allCookies.map(c => `${c.name}=${c.value}`)
-    )
+        
+        if (pathname.startsWith('/admin') && decoded.role !== Role.admin) {
+            return NextResponse.redirect(new URL(Routes.LOGIN, request.url))
+        }
 
-
-    // Decodifico token
-    // if (token) {
-    //     try {
-    //         const payload = jwt.verify(
-    //             token,
-    //             process.env.JWT_SECRET!
-    //         ) as JtwPayload
-
-    //         console.log('[MW] payload', payload)
-            
-    //         if (ADMIN_ROUTES.includes(pathname) && payload.role !== "ADMIN"){
-    //             return new NextResponse("Forbidden", {status: 403})
-    //         }
-
-    //         return NextResponse.next()
-    //     } catch (error) {
-    //         console.error('[MW] JWT error', error)
-    //         return NextResponse.redirect(new URL(Routes.LOGIN, request.nextUrl))
-    //     }
-    // }
-
+        return NextResponse.next()
+    } catch {
+        return NextResponse.redirect(new URL(Routes.LOGIN, request.url))
+    }
 }
 
 export const config = {
-    matcher : [
-        '/admin/:path',
-        '/profile',
-
-    ]
+    matcher: ['/admin/:path*', '/profile'],
 }
