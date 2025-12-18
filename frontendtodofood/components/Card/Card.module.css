@@ -1,5 +1,4 @@
 .containerPrincipal{
-    
     width: fit-content;
     background-color: rgb(36, 36, 36);
     color: white;
@@ -34,3 +33,4 @@
     color: #E95708;
     transition: 0.3s ease;
 }
+

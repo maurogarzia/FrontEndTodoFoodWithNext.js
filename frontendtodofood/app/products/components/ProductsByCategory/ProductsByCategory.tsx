@@ -18,7 +18,7 @@ function ProductsByCategory({title, products} : ProductsByCategoryProps) {
                     :
                     <div className={style.cards}>
                         {products.map((product) => 
-                            <Card name={product.name} image={product.image} category={product.category}/>
+                            <Card key={product.id} name={product.name} image={product.image} category={product.category}/>
                         )}
                     </div>
             }

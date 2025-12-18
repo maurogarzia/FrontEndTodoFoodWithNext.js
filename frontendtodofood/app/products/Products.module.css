@@ -18,3 +18,8 @@
     padding-left: 30px;
     font-weight: 600;
 }
+@media (max-width: 800px) {
+    .title{
+        font-size: 30px;
+    }
+}
