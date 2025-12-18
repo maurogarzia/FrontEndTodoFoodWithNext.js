@@ -1,7 +1,6 @@
 .containerPrincipal{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 50px;
     background-color: #585858;
     width: 100%;
@@ -17,4 +16,11 @@
     font-size: 40px;
     padding-left: 30px;
     font-weight: 600;
+}
+.cards{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
