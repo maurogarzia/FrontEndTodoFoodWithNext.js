@@ -14,8 +14,8 @@ function DataUser({loginUser} : DataUSerProps) {
     return (
         <div className={style.containerPrincipal}>
             <div className={style.data}>
-                <p>{loginUser.name} {loginUser.lastname}</p>
-                <p>{loginUser.username}</p>
+                <p className={style.user}>{loginUser.name} {loginUser.lastname}</p>
+                <p className={style.user}>{loginUser.username}</p>
                 <form action={logout}>
                     <button >Cerrar sesión</button>
                 </form>

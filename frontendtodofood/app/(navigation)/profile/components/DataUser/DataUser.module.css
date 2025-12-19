@@ -9,6 +9,14 @@
     gap: 20px;
     font-size: 25px;
 }
+.user{
+    font-size: 20px;
+    background-color: #2F2E2E;
+    border-radius: 10px;
+    color: #E95708;
+    padding: 5px;
+    font-weight: bold;
+}
 .data button{
     font-size: 25px;
     background-color: #585858;
