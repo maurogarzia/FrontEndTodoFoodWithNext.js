@@ -1,7 +1,7 @@
 import { cookies } from "next/headers"
 
 
-async function getToken() {
+export async function getToken() {
     const cookieStore = await cookies()
     const token =cookieStore.get("auth_token")?.value
     console.log("TOKEN encontrado: ", token);

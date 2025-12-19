@@ -1,5 +1,8 @@
-import { deleted, getAll, getById, post, put } from "@/services/core/crud.service"
+import { deleted, getAll, getById, getToken, post, put } from "@/services/core/crud.service"
+import { JwtPayload } from "@/types/auth/jwtPayload.model"
 import { IRequestUser, IUser } from "@/types/models/Users.model"
+import { jwtDecode } from "jwt-decode"
+import { cookies } from "next/headers"
 
 
 const BASE_USERS = `${process.env.NEXT_PUBLIC_BASE_URL}/user`
@@ -23,4 +26,28 @@ export const updatedUser = async(data : IRequestUser, id: number) : Promise<IUse
 
 export const deletedUser = async(id : number) : Promise<void> => {
     return deleted(BASE_USERS, id)
+}
+
+export const getByUsername = async() : Promise<IUser> => {
+
+    const cookieStore = await cookies()
+    const token = cookieStore.get("auth_token")?.value
+
+    if (!token) throw new Error('No hay token')
+
+    const decoded = jwtDecode<JwtPayload>(token)
+    const username = decoded.sub
+
+    const response = await fetch(`${BASE_USERS}/username/${username}`,{
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+        cache: 'no-store'
+    })
+
+    if (!response.ok) throw new Error('No se pudo encontrar el usuario por su username')
+
+    const data = response.json()
+
+    return data
 }

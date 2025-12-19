@@ -2,11 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { jwtDecode } from 'jwt-decode'
 import { Routes } from './routes/NavigationRoutes/routes.navigation'
 import { Role } from './types/enums/Rol'
+import { JwtPayload } from './types/auth/jwtPayload.model'
 
-type JwtPayload = {
-    sub: string
-    role: Role
-}
 
 export function middleware(request: NextRequest) {
     const token = request.cookies.get('auth_token')?.value

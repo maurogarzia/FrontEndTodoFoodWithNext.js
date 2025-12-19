@@ -1,4 +1,5 @@
-import { Rol } from "../enums/Rol"
+
+import { Role } from "../enums/Rol"
 import { IAddress } from "./Address.model"
 
 
@@ -8,7 +9,7 @@ export interface IUser {
     name: string,
     lastname : string
     password: string,
-    role: Rol,
+    role: Role,
     email: string,
     address: IAddress,
     username : string
@@ -20,7 +21,7 @@ export interface IRequestUser {
     name: string
     lastname : string
     password: string,
-    role: Rol | null,
+    role: Role | null,
     email: string,
     address: {id: number | null} | null,
     username : string
@@ -35,5 +36,5 @@ export interface IPatchUser{
     email : string,
     address : {id : number | null} | null
     username : string
-    role : Rol
+    role : Role
 }

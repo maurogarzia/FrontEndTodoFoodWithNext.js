@@ -1,8 +1,13 @@
 "use client"
 
+import { IUser } from '@/types/models/Users.model'
 import style from './DataAccess.module.css'
 
-function DataAccess() {
+interface DataAccessProps{
+    loginUser: IUser
+}
+
+function DataAccess({loginUser}: DataAccessProps) {
 
     return (
         <div className={style.dataAccess}>
@@ -13,8 +18,7 @@ function DataAccess() {
                     Tus Datos 
                     <button>Editar</button>
                 </p>
-                <p>Teléfono: 2616928706</p>
-                <p>Fecha nacimiento: 9/12/18</p>
+                <p>Teléfono: {loginUser.phone ? loginUser.phone : 'Sin teléfono agregado'}</p>
                 </div>
 
                 <div className={style.paragraph}>
@@ -22,7 +26,11 @@ function DataAccess() {
                     Dirección
                     <button>Editar</button>
                 </p>
-                <p>No hay direcciones guardadas</p>
+                <p>{loginUser.address ? 
+                    (<p>{loginUser.address.street} {loginUser.address.number} ({loginUser.address.locality.name})</p> ) 
+                    :
+                    ('Sin direcciones agregadas')}
+                </p>
                 </div>
 
                 <div className={style.paragraph}>
@@ -30,8 +38,7 @@ function DataAccess() {
                     Datos de acceso
                     <button>Editar</button>
                 </p>
-                <p>Email: user@gmail.com</p>
-                <p>Contraseña: ****</p>
+                <p>Email: {loginUser.email}</p>
                 </div>
 
             
