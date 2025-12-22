@@ -6,7 +6,7 @@ import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import style from '../EntityAdmin.module.css'
 import Buttons from '../../components/Buttons/Buttons'
 import { createEntityStore } from '@/utils/createEntityStore'
-import { countryStore } from '@/Store/Country/country.store'
+import { countryStore } from '@/store/Country/country.store'
 
 interface CountriesAdminProps {
   countries : ICountry[]
