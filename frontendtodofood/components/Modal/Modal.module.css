@@ -1,11 +1,40 @@
 .containerPrincipal{
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
     max-width: 500px;
     height: fit-content;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px ;
 }
 .title{
     width: 100%;
     text-align: center;
     font-size: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.containerButtons{
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.containerButtons button{
+    padding: 5px;
+    width: 90px;
+    background-color: #E95708;
+    border: 1px solid #E95708;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.containerButtons button:hover{
+    background-color: white;
+    color: #E95708;
+    transition: 0.2s ease;
 }

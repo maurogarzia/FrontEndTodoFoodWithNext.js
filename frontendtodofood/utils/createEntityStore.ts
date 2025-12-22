@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 interface EntityStore<T>{
     activeEntity: T | null,
-    setActiveEntity: (entity: T) => void,
+    setActiveEntity: (entity: T | null) => void,
     clearActiveEntity: () => void
 }
 
