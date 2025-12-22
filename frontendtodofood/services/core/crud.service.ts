@@ -1,13 +1,5 @@
 "use server"
-import { cookies } from "next/headers"
-
-
-export async function getToken() {
-    const cookieStore = await cookies()
-    const token =cookieStore.get("auth_token")?.value
-    console.log("TOKEN encontrado: ", token);
-    
-}
+import { getToken } from "@/utils/getToken"
 
 
 export const getAll = async <T> (url: string) : Promise<T[]>=> {
@@ -33,7 +25,7 @@ export const getAll = async <T> (url: string) : Promise<T[]>=> {
 
 export const getById = async <T> (url: string, id: number) : Promise<T>=> {
 
-    const token = getToken()
+    const token = await getToken()
     const response = await fetch(`${url}/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -47,12 +39,12 @@ export const getById = async <T> (url: string, id: number) : Promise<T>=> {
 }
 
 export const post = async<T, D> (url: string, data: D) : Promise<T> => {
-    const token = getToken()
+    const token = await getToken()
 
     const response = await fetch(url,{
         method: 'POST',
         headers: {
-            "ContentType" : "application/json",
+            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         }, 
         body: JSON.stringify(data)
@@ -63,7 +55,7 @@ export const post = async<T, D> (url: string, data: D) : Promise<T> => {
 }
 
 export const put = async<T, D> (url: string, data: D, id: number ) : Promise<T>=> {
-    const token = getToken()
+    const token = await getToken()
     const response = await fetch(`${url}/${id}`,{
         method: "PUT",
         headers: {
@@ -78,7 +70,7 @@ export const put = async<T, D> (url: string, data: D, id: number ) : Promise<T>=
 }
 
 export const deleted = async (url: string, id: number) : Promise<void> => {
-    const token = getToken()
+    const token = await getToken()
     const response = await fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {

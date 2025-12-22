@@ -1,6 +1,8 @@
-import { deleted, getAll, getById, getToken, post, put } from "@/services/core/crud.service"
+import { logout } from "@/app/(navigation)/profile/logout"
+import { deleted, getAll, getById, post, put } from "@/services/core/crud.service"
 import { JwtPayload } from "@/types/auth/jwtPayload.model"
 import { IRequestUser, IUser } from "@/types/models/Users.model"
+import { getToken } from "@/utils/getToken"
 import { jwtDecode } from "jwt-decode"
 import { cookies } from "next/headers"
 
@@ -30,8 +32,8 @@ export const deletedUser = async(id : number) : Promise<void> => {
 
 export const getByUsername = async() : Promise<IUser> => {
 
-    const cookieStore = await cookies()
-    const token = cookieStore.get("auth_token")?.value
+    
+    const token = await getToken()
 
     if (!token) throw new Error('No hay token')
 
@@ -45,7 +47,9 @@ export const getByUsername = async() : Promise<IUser> => {
         cache: 'no-store'
     })
 
-    if (!response.ok) throw new Error('No se pudo encontrar el usuario por su username')
+    if (!response.ok){
+        logout()
+    }
 
     const data = response.json()
 
