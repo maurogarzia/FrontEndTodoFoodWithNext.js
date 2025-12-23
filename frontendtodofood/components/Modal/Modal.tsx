@@ -8,7 +8,7 @@ interface ModalProps{
     title: string,
     children: React.ReactNode
     onSubmit: (formData: FormData) => void,
-    setActiveEntity: () => void
+    setActiveEntity: (type: null) => void
 }
 
 
@@ -20,11 +20,12 @@ function Modal({ title, children, setActiveEntity, onSubmit}: ModalProps) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         onSubmit(formData)
+        setView(false)
     }
 
     const handleClose = () => {
         setView(false)
-        setActiveEntity()
+        setActiveEntity(null)
     }
 
 

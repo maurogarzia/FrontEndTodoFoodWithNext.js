@@ -48,9 +48,9 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
   const handleSubmit = async(formData : FormData) => {
 
     const country: ICountry = {
-      id: activeEntity ?  Number(formData.get('id')) as number : null,
+      id: activeEntity ?  activeEntity.id : null,
       name: formData.get("name") as string
-    }
+    } 
 
     if (activeEntity) {
 
@@ -77,7 +77,7 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
         <div className={style.modalBackdrop}>
             <Modal
               title={activeEntity ? 'Editar País' : 'Crear País'}
-              setActiveEntity={() => setActiveEntity(null)}
+              setActiveEntity={setActiveEntity}
               onSubmit={handleSubmit}
               children={children}
               />

@@ -81,7 +81,7 @@ function LocalitiesAdmin({localities, provinces} : LocalitiesAdminProps) {
                     title={activeEntity ? 'Editar Localidad' : 'Crear Localidad'}
                     children={children}
                     onSubmit={handleSubmit}
-                    setActiveEntity={() => setActiveEntity(null)}
+                    setActiveEntity={setActiveEntity}
                     />
                 </div>
             }

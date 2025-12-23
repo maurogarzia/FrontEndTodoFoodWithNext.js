@@ -76,7 +76,7 @@ function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
                 <div className={style.modalBackdrop}>
                     <Modal
                     title={activeEntity ? 'Editar País' : 'Crear País'}
-                    setActiveEntity={() => setActiveEntity(null)}
+                    setActiveEntity={setActiveEntity}
                     onSubmit={handleSubmit}
                     children={children}
                     />
