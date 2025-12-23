@@ -1,7 +1,7 @@
 import { IProvince, IRequestProvince } from "@/types/models/Province.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
 
-const BASE_PROVINCE = `${process.env.NEXT_PUBLIC_BASE_URL}/province`
+export const BASE_PROVINCE = `${process.env.NEXT_PUBLIC_BASE_URL}/province`
 
 
 export const getAllProvinces = () : Promise<IProvince[]> => {

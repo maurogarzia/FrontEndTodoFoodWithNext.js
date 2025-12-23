@@ -10,10 +10,7 @@ export const getAll = async <T> (url: string) : Promise<T[]>=> {
         }, 
         cache: 'no-store',
     })   
-
-    console.log(response);
     
-
     if (!response.ok) {
         const text = await response.text()
         console.error("GET ALL failed:", response.status, text)

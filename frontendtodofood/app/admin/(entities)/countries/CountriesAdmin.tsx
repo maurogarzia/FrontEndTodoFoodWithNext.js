@@ -9,6 +9,7 @@ import { countryStore } from '@/store/Country/country.store'
 import { modalStore } from '@/store/Modal/modal.store'
 import Modal from '@/components/Modal/Modal'
 import { createCountry, deleteCountry, updatedCountry } from '@/services/entities/country/country.service'
+import ChildrenCountry from './components/ChildrenCountry'
 
 interface CountriesAdminProps {
   countries : ICountry[]
@@ -38,12 +39,7 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
     }
   ]
 
-  const children = (
-    <div className={style.containerData}>
-      <label>Nombre</label>
-      <input type="text" name='name' defaultValue={activeEntity ? activeEntity.name : ''}/>      
-    </div>
-  )
+  const children = <ChildrenCountry/>
 
   const handleSubmit = async(formData : FormData) => {
 
@@ -61,6 +57,7 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
     setView(false)
   }
 
+  // Funcion para abrir modal para crear
   const onCreate = () => {
     setView(true)
     setActiveEntity(null)

@@ -11,11 +11,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 .containerData input{
     padding: 3px;
     border: 1px solid gray;
+    width: 100%;
+}
+.containerData select{
+    padding: 3px;
+    border: 1px solid gray;
+    width: 100%;
 }
 .modalBackdrop{
     position: absolute;

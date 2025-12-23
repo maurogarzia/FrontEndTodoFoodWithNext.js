@@ -1,4 +1,3 @@
-import { logout } from "@/app/(navigation)/profile/logout"
 import { deleted, getAll, getById, post, put } from "@/services/core/crud.service"
 import { JwtPayload } from "@/types/auth/jwtPayload.model"
 import { IRequestUser, IUser } from "@/types/models/Users.model"
@@ -47,9 +46,7 @@ export const getByUsername = async() : Promise<IUser> => {
         cache: 'no-store'
     })
 
-    if (!response.ok){
-        logout()
-    }
+    if (!response.ok) throw new Error('No se pudo encontrar el usuario por su username')
 
     const data = response.json()
 

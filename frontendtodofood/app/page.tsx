@@ -12,7 +12,6 @@ export default async function HomePage() {
 
   const today = new Date().toLocaleDateString("en-CA")
   
-  console.log(today);
   
   const actuallyPromotions = promotions.filter((promo) => 
     String(promo.finallyDate) === today
