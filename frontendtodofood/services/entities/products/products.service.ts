@@ -1,24 +1,23 @@
 import { IProducts, IRequestProducts } from "@/types/models/Product.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-
-const BASE_PRODUCTS = `${process.env.NEXT_PUBLIC_BASE_URL}/product`
+import { FetchEntities } from "@/urls/FetchEntities"
 
 export const getAllProducts = () : Promise<IProducts[]> => {
-    return getAll<IProducts>(BASE_PRODUCTS)
+    return getAll<IProducts>(FetchEntities.BASE_PRODUCT)
 }
 
 export const getProductById = (id: number) : Promise<IProducts> => {
-    return getById<IProducts>(BASE_PRODUCTS, id)
+    return getById<IProducts>(FetchEntities.BASE_PRODUCT, id)
 }
 
 export const createProduct = (data: IRequestProducts) : Promise<IProducts> => {
-    return post<IProducts, IRequestProducts>(BASE_PRODUCTS, data)
+    return post<IProducts, IRequestProducts>(FetchEntities.BASE_PRODUCT, data)
 }
 
 export const updateProduct = (id: number, data: IRequestProducts) : Promise<IProducts> => {
-    return put<IProducts, IRequestProducts>(BASE_PRODUCTS, data, id)
+    return put<IProducts, IRequestProducts>(FetchEntities.BASE_PRODUCT, data, id)
 }
 
 export const deleteProduct = (id: number) : Promise<void> => {
-    return deleted(BASE_PRODUCTS, id)
+    return deleted(FetchEntities.BASE_PRODUCT, id)
 }

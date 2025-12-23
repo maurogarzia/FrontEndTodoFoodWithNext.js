@@ -14,10 +14,9 @@ import { ICountry } from "@/types/models/Country,model"
 
 interface ProvincessAdminProps {
     provinces : IProvince[],
-    countries: ICountry[]
 }
 
-function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
+function ProvincesAdmin({provinces} : ProvincessAdminProps) {
 
     const {setActiveEntity, activeEntity} = provinceStore()
     const {view, setView} = modalStore()
@@ -63,7 +62,7 @@ function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
         setView(false)
     }
 
-    const children = <ChildrenProvince countries={countries}/>
+    const children = <ChildrenProvince/>
 
     return (
         <div className={style.containerPrincipal}>

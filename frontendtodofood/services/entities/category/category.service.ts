@@ -1,25 +1,23 @@
 import { ICategory } from "@/types/models/Category.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-
-const BASE_CATEGORY = `${process.env.NEXT_PUBLIC_BASE_URL}/category`
-
+import { FetchEntities } from "@/urls/FetchEntities"
 
 export const getAllCategories= () : Promise<ICategory[]> => {
-    return getAll<ICategory>(BASE_CATEGORY)
+    return getAll<ICategory>(FetchEntities.BASE_CATEGORIES)
 }
 
 export const getCategoryById = (id: number) : Promise<ICategory> => {
-    return getById<ICategory>(BASE_CATEGORY, id)
+    return getById<ICategory>(FetchEntities.BASE_CATEGORIES, id)
 }
 
 export const createCategory = async(category : ICategory) : Promise<ICategory> =>{
-    return post<ICategory, ICategory>(BASE_CATEGORY, category)
+    return post<ICategory, ICategory>(FetchEntities.BASE_CATEGORIES, category)
 }
 
 export const updatedCategory = async(data : ICategory, id: number) : Promise<ICategory> => {
-    return put<ICategory, ICategory>(BASE_CATEGORY, data, id)
+    return put<ICategory, ICategory>(FetchEntities.BASE_CATEGORIES, data, id)
 }
 
 export const deleteCategory = async(id : number) : Promise<void> => {
-    return deleted(BASE_CATEGORY, id)
+    return deleted(FetchEntities.BASE_CATEGORIES, id)
 }

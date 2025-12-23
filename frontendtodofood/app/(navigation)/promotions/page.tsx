@@ -17,7 +17,7 @@ async function Promotions() {
 
       <div className={style.cards}>
         {promotions.map((promotion) => 
-          <Card key={promotion.id} name={promotion.name} image={promotion.image}/>
+          <Card key={promotion.id} name={promotion.name} image={promotion.image} entity={promotion}/>
         )}
       </div>
       

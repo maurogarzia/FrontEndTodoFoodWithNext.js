@@ -3,19 +3,15 @@ import ProvincesAdmin from "./ProvincesAdmin"
 import { getAllCountries } from "@/services/entities/country/country.service"
 
 async function getData() {
-
-  const provinces = await getAllProvinces()
-  const countries = await getAllCountries()
-
-  return ({provinces, countries})
+  return await getAllProvinces()
 }
 
 async function Provinces() {
 
-  const {provinces, countries} = await getData()
+  const provinces = await getData()
 
   return (
-    <ProvincesAdmin provinces={provinces} countries={countries}/>
+    <ProvincesAdmin provinces={provinces} />
   )
 }
 

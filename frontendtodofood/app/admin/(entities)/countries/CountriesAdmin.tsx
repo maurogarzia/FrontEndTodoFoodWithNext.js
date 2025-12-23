@@ -9,7 +9,7 @@ import { countryStore } from '@/store/Country/country.store'
 import { modalStore } from '@/store/Modal/modal.store'
 import Modal from '@/components/Modal/Modal'
 import { createCountry, deleteCountry, updatedCountry } from '@/services/entities/country/country.service'
-import ChildrenCountry from './components/ChildrenCountry'
+import ChildrenCountry from './components/ChildrenCountries'
 
 interface CountriesAdminProps {
   countries : ICountry[]

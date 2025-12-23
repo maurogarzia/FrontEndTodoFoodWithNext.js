@@ -1,18 +1,19 @@
 import { provinceStore } from '@/store/Province/province.store'
 import style from '../../EntityAdmin.module.css'
 import { ICountry } from '@/types/models/Country,model'
+import { useEffect, useState } from 'react'
 
-interface ChildrenProvinceProps{
-    countries: ICountry[]
-}
-
-function ChildrenProvince({countries} : ChildrenProvinceProps) {
+function ChildrenProvince() {
 
     const {activeEntity} = provinceStore()
+    const [countries, setCountries] = useState<ICountry[]>()
     
-
+    useEffect(() => {
+        const fetchedCountries = async() => {
+            fetch()
+        }
+    },[])
     
-
     return (
         <div className={style.containerData}>
             <label>Nombre</label>

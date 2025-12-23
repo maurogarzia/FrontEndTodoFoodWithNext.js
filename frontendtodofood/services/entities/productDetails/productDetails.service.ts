@@ -1,25 +1,23 @@
 import { IProductsDetails, IRequestProductsDetails } from "@/types/models/ProductDetail.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-
-const BASE_PRODUCTS_DETAILS = `${process.env.NEXT_PUBLIC_BASE_URL}/product-details`
-
+import { FetchEntities } from "@/urls/FetchEntities"
 
 export const getAllProductsDetails = () : Promise<IProductsDetails[]> => {
-    return getAll<IProductsDetails>(BASE_PRODUCTS_DETAILS)
+    return getAll<IProductsDetails>(FetchEntities.BASE_PRODUCT_DETAIL)
 }
 
 export const getProductDetailsById = (id: number) : Promise<IProductsDetails> => {
-    return getById<IProductsDetails>(BASE_PRODUCTS_DETAILS, id)
+    return getById<IProductsDetails>(FetchEntities.BASE_PRODUCT_DETAIL, id)
 }
 
 export const createProductDetails = async(productDetails : IRequestProductsDetails) : Promise<IProductsDetails> =>{
-    return post<IProductsDetails, IRequestProductsDetails>(BASE_PRODUCTS_DETAILS, productDetails)
+    return post<IProductsDetails, IRequestProductsDetails>(FetchEntities.BASE_PRODUCT_DETAIL, productDetails)
 }
 
 export const updatedProductDetails = async(data : IRequestProductsDetails, id: number) : Promise<IProductsDetails> => {
-    return put<IProductsDetails, IRequestProductsDetails>(BASE_PRODUCTS_DETAILS, data, id)
+    return put<IProductsDetails, IRequestProductsDetails>(FetchEntities.BASE_PRODUCT_DETAIL, data, id)
 }
 
 export const deleteProductDetails = async(id : number) : Promise<void> => {
-    return deleted(BASE_PRODUCTS_DETAILS, id)
+    return deleted(FetchEntities.BASE_PRODUCT_DETAIL, id)
 }

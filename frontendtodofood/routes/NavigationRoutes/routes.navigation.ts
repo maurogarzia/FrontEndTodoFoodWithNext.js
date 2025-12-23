@@ -5,6 +5,8 @@ export const Routes = {
     PROFILE: '/profile',
     SUCURSALES: '/branches',
     LOGIN: '/login',
-    REGISTER: '/register'
+    REGISTER: '/register',
+    SELECTED_PRODUCT: '/selectedProduct',
+    SELECTED_PROMOTION: '/selectedProduct',
 }
 

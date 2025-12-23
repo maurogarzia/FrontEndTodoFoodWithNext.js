@@ -1,21 +1,13 @@
 import { deleted, getAll, getById, post, put } from "@/services/core/crud.service"
 import { IImage } from "@/types/models/Image.model"
-import { IRequestUser, IUser } from "@/types/models/Users.model"
-import { METHODS } from "http"
-import { headers } from "next/headers"
-
-// Despues hay que cambiar el archivo
-
-const BASE_IMAGES = `${process.env.NEXT_PUBLIC_BASE_URL}/image`
-const BASE_CLOUDINARY = `${process.env.NEXT_PUBLIC_BASE_URL}/upload`
-
+import { FetchEntities } from "@/urls/FetchEntities"
 
 export const getAllImages= () : Promise<IImage[]> => {
-    return getAll<IImage>(BASE_IMAGES)
+    return getAll<IImage>(FetchEntities.BASE_IMAGES)
 }
 
 export const getImageById = (id: number) : Promise<IImage> => {
-    return getById<IImage>(BASE_IMAGES, id)
+    return getById<IImage>(FetchEntities.BASE_IMAGES, id)
 }
 
 export const createImage = async(file : File) => {
@@ -23,7 +15,7 @@ export const createImage = async(file : File) => {
     formData.append("file", file)
 
     try {
-        const response = await fetch(BASE_CLOUDINARY, {
+        const response = await fetch(FetchEntities.BASE_CLOUDINARY, {
             method: "POST",
             body: file
         })
@@ -44,7 +36,7 @@ export const updatedImages = async (file: File, id: number) => {
     formData.append("file", file)
 
     try {
-        const response = await fetch(`${BASE_CLOUDINARY}/${id}`, {
+        const response = await fetch(`${FetchEntities.BASE_CLOUDINARY}/${id}`, {
         method: "PUT",
         body: formData,
     })
@@ -64,5 +56,5 @@ export const updatedImages = async (file: File, id: number) => {
 
 
 export const deletedImage = async(id : number) : Promise<void> => {
-    return deleted(BASE_IMAGES, id)
+    return deleted(FetchEntities.BASE_IMAGES, id)
 }
