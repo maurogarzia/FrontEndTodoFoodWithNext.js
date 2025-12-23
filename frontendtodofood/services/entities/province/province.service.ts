@@ -11,7 +11,7 @@ export const getProvinceById = (id: number) : Promise<IProvince> => {
     return getById<IProvince>(FetchEntities.BASE_PROVINCE, id)
 }
 
-export const createProvince = async(data : IRequestProvince) : Promise<IProvince> =>{
+export const createProvince = async(data : IRequestProvince) : Promise<IRequestProvince> =>{
     return post<IProvince, IRequestProvince>(FetchEntities.BASE_PROVINCE, data)
 }
 

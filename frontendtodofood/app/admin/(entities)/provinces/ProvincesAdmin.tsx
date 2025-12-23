@@ -11,15 +11,18 @@ import ChildrenProvince from "./components/ChildrenProvince"
 import Modal from "@/components/Modal/Modal"
 import { createProvince, updatedProvince } from "@/services/entities/province/province.service"
 import { ICountry } from "@/types/models/Country,model"
+import { useRouter } from "next/navigation"
 
 interface ProvincessAdminProps {
     provinces : IProvince[],
+    countries: ICountry[]
 }
 
-function ProvincesAdmin({provinces} : ProvincessAdminProps) {
+function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
 
     const {setActiveEntity, activeEntity} = provinceStore()
     const {view, setView} = modalStore()
+    const router = useRouter()
 
     const provinceColumns: TableColumn<IProvince>[] = [
         {header: "Id", accessor: 'id'},
@@ -49,20 +52,22 @@ function ProvincesAdmin({provinces} : ProvincessAdminProps) {
             id: activeEntity ?  Number(formData.get('id')) as number : null,
             name: formData.get("name") as string,
             country: {
-                id: activeEntity?.country.id || null
+                id: Number(formData.get('country')) 
             }
         }
     
         if (activeEntity) {
     
             await updatedProvince(province, activeEntity.id!)
+            router.refresh()
         } else {
             await createProvince(province)
+            router.refresh()
         }
         setView(false)
     }
 
-    const children = <ChildrenProvince/>
+    const children = <ChildrenProvince countries={countries}/>
 
     return (
         <div className={style.containerPrincipal}>
