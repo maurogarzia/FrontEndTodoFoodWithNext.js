@@ -10,6 +10,8 @@ import { modalStore } from '@/store/Modal/modal.store'
 import Modal from '@/components/Modal/Modal'
 import { createCountry, deleteCountry, updatedCountry } from '@/services/entities/country/country.service'
 import ChildrenCountry from './components/ChildrenCountries'
+import { useRouter } from 'next/navigation'
+
 
 interface CountriesAdminProps {
   countries : ICountry[]
@@ -21,6 +23,7 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
   const {setActiveEntity, activeEntity} = countryStore()
   const {view, setView} = modalStore()
 
+  const router = useRouter()
 
   const countryColumns: TableColumn<ICountry>[] = [
     {header: "Id", accessor: 'id'},
@@ -34,6 +37,7 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
           }} 
           onDelete={async(country) => {
             deleteCountry(country.id!)
+            router.refresh()
           }}/>
       )
     }
@@ -51,8 +55,10 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
     if (activeEntity) {
 
       await updatedCountry(country, activeEntity.id!)
+      router.refresh()
     } else {
       await createCountry(country)
+      router.refresh()
     }
     setView(false)
   }

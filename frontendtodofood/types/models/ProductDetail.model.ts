@@ -14,6 +14,5 @@ export interface IRequestProductsDetails {
     stock: number,
     price: number,
     size: {id: number | null},
-    
     product : {id : number | null}
 }

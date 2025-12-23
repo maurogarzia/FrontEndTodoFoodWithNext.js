@@ -13,8 +13,6 @@ const initialState = {error : ""}
 
 function LoginForm() {
 
-
-
     const [state, formAction] = useActionState(loginActions, initialState)
 
     return (
