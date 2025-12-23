@@ -7,16 +7,23 @@ import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import Buttons from '../../components/Buttons/Buttons'
 import { modalStore } from '@/store/Modal/modal.store'
 import { localityStore } from '@/store/Locality/locality.store'
-import { createLocality, updatedLocality } from '@/services/entities/locality/locatlity.service'
+import { createLocality, deleteLocality, updatedLocality } from '@/services/entities/locality/locatlity.service'
+import { IProvince } from '@/types/models/Province.model'
+import { useRouter } from 'next/navigation'
+import Modal from '@/components/Modal/Modal'
+import ChildrenLocality from './components/ChildrenLocalities'
+import Provinces from '../provinces/page'
 
 interface LocalitiesAdminProps{
-    localities: ILocality[]
+    localities: ILocality[],
+    provinces: IProvince[]
 }
 
-function LocalitiesAdmin({localities} : LocalitiesAdminProps) {
+function LocalitiesAdmin({localities, provinces} : LocalitiesAdminProps) {
 
-    const {setView} = modalStore()
+    const {setView, view} = modalStore()
     const {setActiveEntity, activeEntity} = localityStore()
+    const router = useRouter()
 
     const columnLocality : TableColumn<ILocality>[] = [
         {header: 'Id', accessor: 'id'},
@@ -24,7 +31,15 @@ function LocalitiesAdmin({localities} : LocalitiesAdminProps) {
         {header: 'Provincia', render: (localitiy) => localitiy.province.name},
         {header: 'Código postal', accessor: 'cp'},
         {header: 'Acciones', render: (locality) => 
-            <Buttons row={locality} onEdit={(selectedLocality) => {}} onDelete={(id) => {}}/>
+            <Buttons row={locality} 
+            onEdit={(selectedLocality) => {
+                setActiveEntity(selectedLocality)
+                setView(true)
+            }} 
+            onDelete={async(selectedLocality) => {
+                await deleteLocality(selectedLocality.id)
+                router.refresh()
+            }}/>
         }
     ]
 
@@ -35,15 +50,17 @@ function LocalitiesAdmin({localities} : LocalitiesAdminProps) {
                 name: formData.get("name") as string,
                 cp: Number(formData.get("cp") as string),
                 province: {
-                    id: activeEntity?.province.id || null
+                    id: Number(formData.get("province"))
                 }
             }
         
             if (activeEntity) {
         
                 await updatedLocality(locality, activeEntity.id!)
+                router.refresh()
             } else {
                 await createLocality(locality)
+                router.refresh()
             }
             setView(false)
         }
@@ -53,8 +70,21 @@ function LocalitiesAdmin({localities} : LocalitiesAdminProps) {
         setActiveEntity(null)
     }
 
+    const children = <ChildrenLocality provinces={provinces}/>
+
     return (
         <div className={style.containerPrincipal}>
+
+            {view && 
+                <div className={style.modalBackdrop}>
+                    <Modal 
+                    title={activeEntity ? 'Editar Localidad' : 'Crear Localidad'}
+                    children={children}
+                    onSubmit={handleSubmit}
+                    setActiveEntity={() => setActiveEntity(null)}
+                    />
+                </div>
+            }
 
             <TitleAndButton title='LOCALIDADES' titleOfButton='Agregar localidades' onCreate={onCreate}/>
 

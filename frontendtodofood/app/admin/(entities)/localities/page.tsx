@@ -1,16 +1,19 @@
 import { getAllLocalities } from "@/services/entities/locality/locatlity.service"
 import LocalitiesAdmin from "./LocalitiesAdmin"
+import { getAllProvinces } from "@/services/entities/province/province.service"
 
 async function getData() {
-  return await getAllLocalities()
+  const localities = await getAllLocalities()
+  const provinces = await getAllProvinces()
+  return {localities, provinces}
 }
 
 async function Localities() {
 
-  const localities = await getData()
+  const {localities, provinces} = await getData()
 
   return (
-    <LocalitiesAdmin localities={localities}/>
+    <LocalitiesAdmin localities={localities} provinces={provinces}/>
   )
 }
 
