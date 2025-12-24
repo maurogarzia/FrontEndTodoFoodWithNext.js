@@ -1,16 +1,20 @@
 import { getAllPromotions } from "@/services/entities/promotion/promotion.service"
 import PromotionsAdmin from "./PromotionsAdmin"
+import { getAllImages } from "@/services/entities/images/images.service"
 
 async function getData() {
-  return await getAllPromotions()
+  const promotions = await getAllPromotions()
+  const images = await getAllImages()
+
+  return {promotions, images}
 }
 
 async function Promotions() {
 
-  const promotions = await getData()
+  const {promotions, images} = await getData()
 
   return (
-    <PromotionsAdmin promotions={promotions}/>
+    <PromotionsAdmin promotions={promotions} images={images}/>
   )
 }
 
