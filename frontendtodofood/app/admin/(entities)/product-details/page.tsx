@@ -1,16 +1,23 @@
 import { getAllProductsDetails } from "@/services/entities/productDetails/productDetails.service"
 import ProductDetailsAdmin from "./ProductDetailsAdmin"
+import { getAllSizes } from "@/services/entities/size/size.service"
+import { getAllProducts } from "@/services/entities/products/products.service"
 
 async function getData() {
-  return await getAllProductsDetails()
+  
+  const productDetails = await getAllProductsDetails()
+  const sizes = await getAllSizes()
+  const products = await getAllProducts()
+
+  return {sizes, products, productDetails}
 }
 
 async function ProductDetails() {
 
-  const productsDetails = await getData()
+  const {productDetails, sizes, products} = await getData()
 
   return (
-    <ProductDetailsAdmin productDetails={productsDetails}/>
+    <ProductDetailsAdmin productDetails={productDetails} products={products} sizes={sizes}/>
   )
 }
 
