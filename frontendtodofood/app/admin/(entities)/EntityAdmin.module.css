@@ -28,6 +28,26 @@
     border: 1px solid gray;
     width: 100%;
 }
+.containerDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid gray;
+    padding: 5px;
+}
+.unitDetails{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+.unitDetails input{
+    width: 20px;
+    height: 20px;
+}
 .modalBackdrop{
     position: absolute;
     top: 0;
