@@ -32,7 +32,7 @@ function Modal({ title, children, setActiveEntity, onSubmit}: ModalProps) {
     return (
         <div className={style.containerPrincipal}>
             <p className={style.title}>{title}</p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data" >
                 <div className={style.containerData}>
                     {children}
                 </div>

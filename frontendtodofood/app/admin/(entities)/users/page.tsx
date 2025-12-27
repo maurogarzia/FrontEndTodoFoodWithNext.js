@@ -1,16 +1,20 @@
 import { getAllUsers } from "@/services/entities/users/users.service"
 import UsersAdmin from "./UsersAdmin"
+import { getAllAddresses } from "@/services/entities/address/address.service"
 
 async function getData() {
-  return await getAllUsers()
+  const users = await getAllUsers()
+  const addresses = await getAllAddresses()
+
+  return {users, addresses}
 }
 
 async function Users() {
 
-  const users = await getData() 
+  const {users, addresses} = await getData() 
 
   return (
-    <UsersAdmin users={users}/>
+    <UsersAdmin users={users} addresses={addresses}/>
   )
 }
 
