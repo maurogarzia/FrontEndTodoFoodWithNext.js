@@ -5,7 +5,6 @@ interface modalStoreProps{
     setView: (option: boolean) => void
 }
 
-
 export const modalStore = create<modalStoreProps>((set) => ({
     view: false,
 

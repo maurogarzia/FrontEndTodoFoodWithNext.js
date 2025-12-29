@@ -1,9 +1,10 @@
 import style from './Admin.module.css'
 
-
 function Admin() {
     return (
-        <div className={style.containerAdmin}>ADMINISTRACIÓN</div>
+        <div className={style.containerAdmin}>
+            ADMINISTRACIÓN
+        </div>
     )
 }
 

@@ -14,3 +14,19 @@
     align-items: center;
     color: white;
 }
+.interactiveAside{
+    display: none;
+}
+@media (max-width: 800px) {
+    .containerLayout{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerAdmin{
+        font-size: 30px;
+        min-height: 58vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
