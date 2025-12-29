@@ -38,3 +38,9 @@
     color: #E95708;
     transition: 0.2s ease;
 }
+
+@media (max-width: 800px) {
+    .containerPrincipal{
+        max-width: 350px;
+    }
+}

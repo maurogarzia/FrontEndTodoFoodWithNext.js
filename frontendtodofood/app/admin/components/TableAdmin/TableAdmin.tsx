@@ -15,30 +15,32 @@ interface AdminTableProps<T> {
 
 function TableAdmin<T>({data, columns} : AdminTableProps<T>) {
     return (
-        <table className={style.table}>
+        <div className={style.tableWrapper}>
+            <table className={style.table}>
 
-            <thead>
-                <tr className={style.column}>
-                    {columns.map((col, i) => (
-                        <th key={i} className={style.column}>{col.header}</th>
-                    ))}
-                </tr>
-                
-            </thead>
-
-            <tbody>
-                {data.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                        {columns.map((col,colIndex) => (
-                            <td key={colIndex} className={style.value}> 
-                                {col.render ? col.render(row) : String(row[col.accessor as keyof T])}
-                            </td>
+                <thead>
+                    <tr className={style.column}>
+                        {columns.map((col, i) => (
+                            <th key={i} className={style.column}>{col.header}</th>
                         ))}
                     </tr>
-                ))}
-                
-            </tbody>
-        </table>
+                    
+                </thead>
+
+                <tbody>
+                    {data.map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {columns.map((col,colIndex) => (
+                                <td key={colIndex} className={style.value}> 
+                                    {col.render ? col.render(row) : String(row[col.accessor as keyof T])}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                    
+                </tbody>
+            </table>
+        </div>
     )
 }
 

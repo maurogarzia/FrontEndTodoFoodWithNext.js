@@ -1,14 +1,17 @@
-.table{
+.tableWrapper {
     width: 100%;
     overflow-x: auto;
-    max-height: 58vh;
+    max-width: 100%;
+}
+.table {
+    width: 100%;
+    min-width: 600px; /* evita que se aplaste demasiado */
     background-color: rgb(62, 62, 62);
     color: white;
-    border: none;
-    padding: 0;
     border-collapse: collapse;
     border-radius: 10px;
 }
+
 .column{
     width: fit-content;
     padding: 5px;
