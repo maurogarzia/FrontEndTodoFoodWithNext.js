@@ -9,6 +9,15 @@
     font-size: 20px;
     display: flex;
 }
+.modalBackdrop{
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.352);
+    height: 100%;
+    width: 100%;
+    min-height: 117.7vh;
+}
 
 @media (max-width: 800px) {
     .containerPrincipal{

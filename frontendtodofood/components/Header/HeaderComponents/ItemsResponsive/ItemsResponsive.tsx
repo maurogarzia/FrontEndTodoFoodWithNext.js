@@ -10,10 +10,10 @@ function ItemsResponsive({setView} : Props ) {
     return (
         <div className={style.containerPrincipal}>
             <input type="text" placeholder='Buscar...'/>
-            <Link className={style.link} href={Routes.PROMOTIONS}>Promociones</Link>
-            <Link className={style.link} href={Routes.PRODUCTS}>Productos</Link>
-            <Link className={style.link} href={Routes.SUCURSALES}>Sucursales</Link>
-            <Link className={style.link} href={Routes.PROFILE}>Perfil</Link>
+            <Link className={style.link} href={Routes.PROMOTIONS} onClick={() => setView(false)}>Promociones</Link>
+            <Link className={style.link} href={Routes.PRODUCTS} onClick={() => setView(false)}>Productos</Link>
+            <Link className={style.link} href={Routes.SUCURSALES} onClick={() => setView(false)}>Sucursales</Link>
+            <Link className={style.link} href={Routes.PROFILE} onClick={() => setView(false)}>Perfil</Link>
             <button className={style.button} onClick={() => setView(false)}>Cerrar</button>
         </div>
     )

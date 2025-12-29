@@ -1,0 +1,28 @@
+.containerData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+.containerData input{
+    padding: 3px;
+    border: 1px solid gray;
+    width: 100%;
+}
+.containerData select{
+    padding: 3px;
+    border: 1px solid gray;
+    width: 100%;
+}
+.containerAddress{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.address{
+    text-align: center;
+    font-size: 15px;
+}

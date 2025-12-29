@@ -3,6 +3,9 @@ import DataUser from './components/DataUser/DataUser'
 import DataAccess from './components/DataAccess/DataAccess'
 import { getByUsername } from '@/services/entities/users/users.service'
 import { logout } from './logout'
+import ProfilePage from './ProfilePage'
+import { getAllLocalities } from '@/services/entities/locality/locatlity.service'
+
 
 async function getUser() {
     try {
@@ -12,16 +15,17 @@ async function getUser() {
     }
 }
 
+async function getData() {
+    return getAllLocalities()
+}
 
 async function Profile() {
 
     const loginUser = await getUser()
+    const localities = await getData()
 
     return (
-        <div className={style.containerPrincipal}> 
-            <DataUser loginUser={loginUser!}/>
-            <DataAccess loginUser={loginUser!}/>
-        </div>
+        <ProfilePage loginUser={loginUser} localities={localities}/>
     )
 }
 
