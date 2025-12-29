@@ -77,5 +77,5 @@ export const deleted = async (url: string, id: number) : Promise<void> => {
 
     if (!response.ok) throw new Error('Error en DELETE')
 
-    return response.json()
+    return 
 }

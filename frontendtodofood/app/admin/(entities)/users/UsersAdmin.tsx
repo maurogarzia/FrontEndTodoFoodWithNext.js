@@ -9,10 +9,15 @@ import { IAddress } from '@/types/models/Address.model'
 import { modalStore } from '@/store/Modal/modal.store'
 import { userStore } from '@/store/User/user.store'
 import { useRouter } from 'next/navigation'
-import { deletedUser } from '@/services/entities/users/users.service'
+import { createUser, deletedUser, updatedUser } from '@/services/entities/users/users.service'
 import { Role } from '@/types/enums/Rol'
 import Modal from '@/components/Modal/Modal'
 import ChildrenUsers from './components/ChildrenUsers'
+import { IRegister } from '@/types/auth/register.model'
+import { loginActions } from '@/app/(auth)/login/actions'
+import { registerActions } from '@/app/(auth)/register/actions'
+import { register } from '@/services/auth/register.service'
+import ChildrenRegister from './components/ChildrenRegister'
 
 interface UsersAdminProps{
     users: IUser[],
@@ -46,19 +51,37 @@ function UsersAdmin({users, addresses} : UsersAdminProps) {
         
     ]
 
-    const handleSubmit = (formData : FormData) => {
-        const user : IRequestUser = {
-            id: activeEntity ? activeEntity.id : null,
-            name: formData.get('name') as string,
-            lastname: formData.get('lastname') as string,
-            phone: Number(formData.get('phone')),
-            password: activeEntity?.password || '',
-            address: {
-                id: Number(formData.get('address'))
-            },
-            username: formData.get('username') as string,
-            role: formData.get('role') as Role,
-            email: formData.get('email') as string
+    const handleSubmit = async(formData : FormData) => {
+        if (activeEntity){
+            const user : IRequestUser = {
+                id: activeEntity ? activeEntity.id : null,
+                name: formData.get('name') as string,
+                lastname: formData.get('lastname') as string,
+                phone: Number(formData.get('phone')),
+                password: activeEntity?.password || '',
+                address: {
+                    id: Number(formData.get('address'))
+                },
+                username: formData.get('username') as string,
+                role: formData.get('role') as Role,
+                email: formData.get('email') as string
+            }
+
+            await updatedUser(user, user.id!)
+            router.refresh()
+        } else {
+            const user : IRegister = {
+                name: formData.get("name") as string,
+                username: formData.get("username") as string,
+                lastname: formData.get("lastname") as string,
+                email: formData.get("email") as string,
+                role: "CUSTOMER",
+                password: formData.get("password") as string
+            }
+
+            await register(user)
+            router.refresh()
+            
         }
     }
 
@@ -67,7 +90,9 @@ function UsersAdmin({users, addresses} : UsersAdminProps) {
         setActiveEntity(null)
     }
 
-    const children = <ChildrenUsers addresses={addresses}/>
+    const childrenUpdate = <ChildrenUsers addresses={addresses}/>
+    const childrenRegister = <ChildrenRegister/>
+
 
     return (
         <div className={style.containerPrincipal}>
@@ -78,7 +103,7 @@ function UsersAdmin({users, addresses} : UsersAdminProps) {
                         title={activeEntity ? 'Editar Usuario' : 'Crear usuario'}
                         onSubmit={handleSubmit}
                         setActiveEntity={setActiveEntity}
-                        children={children}
+                        children={activeEntity ? childrenUpdate : childrenRegister}
                     />
                 </div>
             }

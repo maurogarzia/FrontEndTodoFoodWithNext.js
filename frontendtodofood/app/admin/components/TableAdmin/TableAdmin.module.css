@@ -1,5 +1,6 @@
 .table{
     width: 100%;
+    max-height: 58vh;
     background-color: rgb(62, 62, 62);
     color: white;
     border: none;

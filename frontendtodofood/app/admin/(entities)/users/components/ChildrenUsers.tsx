@@ -16,19 +16,25 @@ function ChildrenUsers({addresses} : ChildrenUsersProps) {
         <div className={style.containerData}>
             <label>Nombre</label>
             <input type="text" name="name" defaultValue={activeEntity?.name}/>
+
             <label>Apellido</label>
             <input type="text" name="lastname" defaultValue={activeEntity?.lastname} />
+
             <label>Nombre usuario</label>
             <input type="text" name="username" defaultValue={activeEntity?.username}/>
+
             <label>Email</label>
             <input type="text" name="email" defaultValue={activeEntity?.email} />
+
             <label>Teléfono</label>
             <input type="text" name="phone" defaultValue={activeEntity?.phone || ''}/>
+
             <label>Rol</label>
-            <select name="" id="role">
-                <option key={Role.admin} value={Role.admin}>{Role.admin}</option>
-                <option key={Role.user} value={Role.user}>{Role.user}</option>
+            <select name="role" defaultValue={activeEntity?.role}>
+                <option key={Role.admin} value='ADMIN'>{Role.admin}</option>
+                <option key={Role.user} value='CUSTOMER'>{Role.user}</option>
             </select>
+
             <label>Dirección</label>
             <select name="address" defaultValue={activeEntity?.address?.id ?? ''}>
                 {addresses.map((address) => (

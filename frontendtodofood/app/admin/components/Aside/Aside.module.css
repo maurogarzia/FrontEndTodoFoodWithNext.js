@@ -6,6 +6,7 @@
     padding: 10px;
     min-height: 58vh;
     min-width: fit-content; 
+    
 }
 .link{
     color: white;
@@ -13,7 +14,7 @@
     height: 100%;
     text-decoration: none;
     width: 100%;
-    cursor: pointer
+    cursor: pointer;
 }
 .link:hover{
     background-color: gray;
