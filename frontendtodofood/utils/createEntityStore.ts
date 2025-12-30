@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface EntityStore<T>{
     
@@ -8,13 +9,27 @@ interface EntityStore<T>{
     
 }
 
-export function createEntityStore<T> () {
-    return create<EntityStore<T>>((set) => ({
+export function createEntityStore<T> (storeKey?: string) {
+    return create<EntityStore<T>>()(
+        storeKey
+        ? persist(
+            (set) => ({
+                activeEntity: null,
+                setActiveEntity: (entity) => set({activeEntity: entity})
+            }),
+            {
+                name: storeKey,
+                partialize: (state) => ({
+                    activeEntity: state.activeEntity
+                })
+            }
+        )
+        : 
+        (set) => ({
+            activeEntity: null,
+            setActiveEntity: (entity) => set({activeEntity: entity})
+        })
+    )
         
-        activeEntity: null,
         
-
-        setActiveEntity:(entity) => set({activeEntity : entity}),
-
-    }))
 }
