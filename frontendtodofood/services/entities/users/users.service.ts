@@ -69,7 +69,7 @@ export const patchUser = async(id: number, newUser: IPatchUser) : Promise<IPatch
 }
 
 // Cambia la contrasenia
-export const updatePassword = async(id: number, data: {oldaPassword: string, newPassword: string}) => {
+export const updatePassword = async(id: number, data: {oldPassword: string, newPassword: string}) => {
     const token = await getToken()
 
     if (!token) throw new Error('No hay token')
