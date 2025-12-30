@@ -18,14 +18,28 @@ interface ProfilePageProps{
 function ProfilePage({loginUser, localities} : ProfilePageProps) {
 
     
-    const {view, setView} = modalStore()
+    const {view, type} = modalStore()
     const [title, setTitle] = useState<string>('') 
     const [children, setChildren] = useState<React.ReactNode>()
     const {setActiveEntity} = userStore()   
 
 
     const handleSubmit = () => {
+        if (type === '') return
 
+        if (type === 'patch') {
+            
+        }
+
+        if (type === 'changeAddress') {
+
+        }
+
+        if (type === 'changePassword'){
+
+        }
+
+        return
     }
 
     return (

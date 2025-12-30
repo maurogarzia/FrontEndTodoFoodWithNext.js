@@ -20,22 +20,20 @@ interface DataAccessProps{
 
 function DataAccess({loginUser, setTitle, setChildren, localities}: DataAccessProps) {
 
-    const {setView} = modalStore()
+    const {setView, setType} = modalStore()
     const {setActiveEntity} = userStore()
 
-    const handleOpen = (title: string, children: React.ReactElement) => {
-        setView(true)
-        setTitle(title)
-        setChildren(children)
-        setActiveEntity(loginUser)
+    const handleOpen = (title: string, children: React.ReactElement, type: string) => {
+        setView(true) // Abre el modal
+        setTitle(title) // Pone el titulo al modal
+        setChildren(children) // Seteo el children
+        setActiveEntity(loginUser) // Seteo el usuario del perfil
+        setType(type) // typo de modal que se va a ejecutar
     }
 
     const childrenPassword = <ChildrenChangePassword/>
-
     const childrenData = <ChildrenData/>
-
     const childrenDataAccess = <ChildrenDataAcces/>
-
     const childrenAddress = <ChildrenAddress localities={localities}/>
 
     return (
@@ -45,7 +43,7 @@ function DataAccess({loginUser, setTitle, setChildren, localities}: DataAccessPr
                 <div className={style.paragraph}>
                 <p className={style.title}>
                     Tus Datos 
-                    <button onClick={() => handleOpen('Editar datos personales', childrenData)}>Editar</button>
+                    <button onClick={() => handleOpen('Editar datos personales', childrenData, 'patch')}>Editar</button>
                 </p>
                 <p>Nombre: {loginUser.name}</p>
                 <p>Apellido: {loginUser.lastname}</p>
@@ -55,7 +53,7 @@ function DataAccess({loginUser, setTitle, setChildren, localities}: DataAccessPr
                 <div className={style.paragraph}>
                 <p className={style.title}>
                     Dirección
-                    <button onClick={() => handleOpen('Editar dirección', childrenAddress)}>Editar</button>
+                    <button onClick={() => handleOpen('Editar dirección', childrenAddress, 'changeAddress')}>Editar</button>
                 </p>
                 <div>{loginUser.address ? 
                     (<p>{loginUser.address.street} {loginUser.address.number} ({loginUser.address.locality.name})</p> ) 
@@ -67,13 +65,13 @@ function DataAccess({loginUser, setTitle, setChildren, localities}: DataAccessPr
                 <div className={style.paragraph}>
                     <p className={style.title}>
                         Datos de acceso
-                        <button onClick={() => handleOpen('Editar datos de acceso', childrenDataAccess)}>Editar</button>
+                        <button onClick={() => handleOpen('Editar datos de acceso', childrenDataAccess, 'patch')}>Editar</button>
                     </p>
                     <p>Email: {loginUser.email}</p>
                     <p>Nombre de usuario: {loginUser.username}</p>
                     <div className={style.item}>
                         <p>Contraseña: </p>
-                        <button onClick={() => handleOpen('Cambiar contraseña', childrenPassword)}>Cambiar contraseña</button>
+                        <button onClick={() => handleOpen('Cambiar contraseña', childrenPassword, 'changePassword')}>Cambiar contraseña</button>
                     </div>
                 </div>
 
