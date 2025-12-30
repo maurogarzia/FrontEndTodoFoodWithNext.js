@@ -8,6 +8,7 @@
     display: flex;
     width: 100%;
     padding: 10px;
+    justify-content: space-around;
 }
 .information{
     display: flex;
@@ -26,9 +27,9 @@
 .image{
     padding: 20px;
     width: fit-content;
-    
     margin-left: 150px;
 }
+
 @media (max-width: 800px) {
     .containerInformation{
         display: flex;

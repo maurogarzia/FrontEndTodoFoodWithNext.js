@@ -7,8 +7,6 @@ import List from './components/List/List'
 import { useState } from 'react'
 import SelectedPrice from '../components/SelectedPrice/SelectedPrice'
 
-
-
 interface SelectedProductProps{
   productsDetails: IProductsDetails[]
 }
@@ -19,6 +17,7 @@ function SelectedProduct({productsDetails} : SelectedProductProps) {
   const [price, setPrice] = useState<number>(0)
 
   const details = productsDetails.filter( detail => detail.product.id === activeEntity?.id)
+  
 
   return (
     <div className={style.containerPrincipal}>
