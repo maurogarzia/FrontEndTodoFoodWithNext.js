@@ -7,6 +7,6 @@ export const Routes = {
     LOGIN: '/login',
     REGISTER: '/register',
     SELECTED_PRODUCT: '/selectedProduct',
-    SELECTED_PROMOTION: '/selectedProduct',
+    SELECTED_PROMOTION: '/selectedPromotion',
 }
 

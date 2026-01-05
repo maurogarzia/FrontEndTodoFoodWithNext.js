@@ -23,9 +23,7 @@ function Card({name, image, category, entity} : Props) {
   const router = useRouter()
 
   const setProduct = productStore(state => state.setActiveEntity)
-  const activeProduct = productStore(state => state.activeEntity)
   const setPromotion = promotionStore(state => state.setActiveEntity)
-  const activePromotion = promotionStore(state => state.activeEntity)
   
   const handleRedirect = () => {
     if (category){
@@ -33,7 +31,6 @@ function Card({name, image, category, entity} : Props) {
       setProduct(entity as IProducts)
       router.push(Routes.SELECTED_PRODUCT)
     } else {
-      
       setPromotion(entity as IPromotion)
       router.push(Routes.SELECTED_PROMOTION)
     }
