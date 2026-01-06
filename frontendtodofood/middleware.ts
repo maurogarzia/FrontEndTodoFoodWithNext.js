@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
 
   // Perfil requiere login
-    if (pathname === Routes.PROFILE && !token) {
+    if ((pathname === Routes.PROFILE || pathname === Routes.CART) && !token) {
         return NextResponse.redirect(new URL(Routes.LOGIN, request.url))
     }
 
@@ -33,5 +33,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ['/admin/:path*', '/profile'],
+    matcher: ['/admin/:path*', '/profile', '/cart'],
 }

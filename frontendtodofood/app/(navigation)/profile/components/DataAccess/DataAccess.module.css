@@ -16,21 +16,28 @@
 }
 .title{
     display: flex;
+    align-items: center;
     font-size: 35px;
     gap: 20px;
+    background-color: #2F2E2E;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
 }
 .title button{
-    background-color: #585858;
+    background-color: #E95708;
     color: white;
     width: 80px;
-    border: 1px solid #585858;
+    border: 1px solid #E95708;
     cursor: pointer;
+    border-radius: 5px;
+    height: 35px;
 }
 .title button:hover{
     background-color: white;
     border: 1px solid #585858;
     color: #585858;
-
+    transition: 0.2s ease;
 }
 .item{
     display: flex;
@@ -53,5 +60,8 @@
 @media (max-width: 800px) {
     .title{
         font-size: 30px;
+    }
+    .title button{
+        height: 35px;
     }
 }

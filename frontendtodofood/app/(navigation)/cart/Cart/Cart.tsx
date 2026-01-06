@@ -23,6 +23,10 @@ function Cart( ) {
         handlePrice()
     },[elements])
 
+    const handleSubmit = () => {
+        alert("Estamos trabajando en la implementación de pago ;)")
+    }
+
     return (
         <div className={style.containerPrincipal}>
             <p className={style.title}>Carrito</p>
@@ -33,6 +37,18 @@ function Cart( ) {
                 :
                 <div className={style.cartFull}>
 
+                    <div className={style.containerResume}>
+                        <div className={style.resume}>
+
+                            <p>Cantidad de pedidos: {elements.length}</p>
+                            <p>Precio total: $ {priceExcludingIVA}</p>
+                            <p>IVA: $ {iva}</p>
+                            <p>Precio + IVA: $ {priceExcludingIVA + iva}</p>
+                            <button className={style.payButton} onClick={handleSubmit}>PAGAR</button>
+
+                        </div>
+                    </div>
+                    
                     <div className={style.items}>
                         <p className={style.subTitle}>Pedidos</p>
                         <div className={style.cards}>
@@ -42,17 +58,6 @@ function Cart( ) {
                         </div>
                     </div>
 
-                    <div className={style.containerResume}>
-                        <div className={style.resume}>
-
-                            <p>Cantidad de pedidos: {elements.length}</p>
-                            <p>Precio total: $ {priceExcludingIVA}</p>
-                            <p>IVA: $ {iva}</p>
-                            <p>Precio + IVA: $ {priceExcludingIVA + iva}</p>
-                            <button className={style.payButton}>PAGAR</button>
-
-                        </div>
-                    </div>
                 </div>
             }
         </div>

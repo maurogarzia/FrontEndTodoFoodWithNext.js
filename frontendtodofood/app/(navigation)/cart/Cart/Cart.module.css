@@ -23,6 +23,7 @@
     
 }
 .items{
+    padding: 10px;
     width: 50%;
 }
 .containerResume{
@@ -41,6 +42,7 @@
 .subTitle{
     color: white;
     font-size: 25px;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 .cards{
@@ -64,4 +66,24 @@
     background-color: white;
     color: #E95708;
     transition: 0.3s ease;
+}
+
+@media (max-width: 800px) {
+    .cartFull{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerResume{
+        width: 100%;
+    }
+    .resume{
+        width: 100%;
+    }
+    .subTitle{
+        text-align: center;
+    }
+    .items{
+        width: 100%;
+    }
 }

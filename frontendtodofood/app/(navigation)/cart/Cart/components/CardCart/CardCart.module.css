@@ -6,6 +6,7 @@
     padding: 20px;
     background-color: #2F2E2E;
     border-radius: 10px;
+    text-align: center;
 }
 .content{
     display: flex;
@@ -39,4 +40,13 @@
     background-color: red;
     transition: 0.2s ease;
     
+}
+
+@media (max-width: 800px) {
+    .containerPrincipal{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
 }
