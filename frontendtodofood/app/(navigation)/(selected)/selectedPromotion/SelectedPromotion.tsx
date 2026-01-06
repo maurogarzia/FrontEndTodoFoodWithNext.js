@@ -31,7 +31,7 @@ function SelectedPromotion({promotionDetails} : SelectedPromotionProps) {
 
                 
                 <div className={style.image}>
-                    <SelectedPrice image={activeEntity?.image.url!} price={price}/>
+                    <SelectedPrice image={activeEntity?.image.url!} price={price} name={activeEntity?.name!}/>
                 </div>
 
             </div>

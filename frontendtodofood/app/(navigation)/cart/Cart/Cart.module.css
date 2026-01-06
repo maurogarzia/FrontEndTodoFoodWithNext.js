@@ -1,0 +1,67 @@
+.containerPrincipal{
+    background-color: #585858;
+    min-height: 58vh;
+}
+.title{
+    width: 100%;
+    background-color: #2F2E2E;
+    color: #E95708;
+    padding: 10px;
+    font-size: 40px;
+    padding-left: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.emptyCart{
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+}
+.cartFull{
+    display: flex;
+    padding: 10px;
+    
+}
+.items{
+    width: 50%;
+}
+.containerResume{
+    width: 50%;
+    height: 100%;
+}
+.resume{
+    background-color: #2F2E2E;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+.subTitle{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.cards{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-x: auto;
+    gap: 10px;
+}
+.payButton{
+    background-color: #E95708;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.payButton:hover{
+    background-color: white;
+    color: #E95708;
+    transition: 0.3s ease;
+}

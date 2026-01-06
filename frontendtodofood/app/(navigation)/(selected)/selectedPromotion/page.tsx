@@ -5,11 +5,11 @@ async function getData() {
     return await getAllPromotionDetails()
 }
 
-async function page() {
+async function SelectedPromotionPage() {
 
     const promotionDetails = await getData()
 
     return <SelectedPromotion promotionDetails={promotionDetails}/>
 }
 
-export default page
+export default SelectedPromotionPage

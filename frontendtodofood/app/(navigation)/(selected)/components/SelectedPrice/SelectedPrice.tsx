@@ -1,14 +1,22 @@
 import Image from 'next/image'
 import style from './SelectedPrice.module.css'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { ICart } from '@/types/models/Cart.model'
+import { IProductsDetails } from '@/types/models/ProductDetail.model'
+import { IPromotionDetails } from '@/types/models/PromotionDetails.model'
+import { cartStore } from '@/store/Cart/cart.store'
 
 interface SelectedPriceProps{
     image: string,
-    price: number
+    price: number,
+    name: string
 }
 
-function SelectedPrice({image, price} : SelectedPriceProps) {
+function SelectedPrice({image, price, name} : SelectedPriceProps) {
 
+    const router = useRouter()
+    const {addElement} = cartStore()
     const [counter, setCounter] = useState<number>(1)
 
     const handleCounter = (type: string) => {
@@ -24,6 +32,26 @@ function SelectedPrice({image, price} : SelectedPriceProps) {
             }
         }
     }
+    
+    
+    const handleSubmit = () => {
+
+        const cartElement : ICart = {
+            id: crypto.randomUUID(),
+            name:name,
+            price: price * counter,
+            quantity: counter,
+            image: image
+        }
+
+        if (price < 1) {
+            alert('Debe elegir un tamaño')
+            return
+        }
+
+        addElement(cartElement)
+        router.push('/cart')
+    }
 
     return (
         <div className={style.containerPrincipal}>
@@ -38,7 +66,7 @@ function SelectedPrice({image, price} : SelectedPriceProps) {
                 </div>
                 <p className={style.price}>$ { counter * price}</p>
             </div>
-            <button className={style.button}>Agregar al carrito</button>
+            <button className={style.button} onClick={handleSubmit}>Agregar al carrito</button>
         </div>
     )
 }

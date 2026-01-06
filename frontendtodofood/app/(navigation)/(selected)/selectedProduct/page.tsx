@@ -5,7 +5,7 @@ async function getData() {
     return await getAllProductsDetails()
 }
 
-async function page() {
+async function SelectedProductPage() {
 
     const productsDetails = await getData()
 
@@ -14,4 +14,4 @@ async function page() {
     )
 }
 
-export default page
+export default SelectedProductPage
