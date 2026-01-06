@@ -14,6 +14,7 @@ function ItemsResponsive({setView} : Props ) {
             <Link className={style.link} href={Routes.PRODUCTS} onClick={() => setView(false)}>Productos</Link>
             <Link className={style.link} href={Routes.SUCURSALES} onClick={() => setView(false)}>Sucursales</Link>
             <Link className={style.link} href={Routes.PROFILE} onClick={() => setView(false)}>Perfil</Link>
+            <Link className={style.link} href={Routes.CART} onClick={() => setView(false)}>Carrito</Link>
             <button className={style.button} onClick={() => setView(false)}>Cerrar</button>
         </div>
     )

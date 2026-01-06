@@ -8,5 +8,6 @@ export const Routes = {
     REGISTER: '/register',
     SELECTED_PRODUCT: '/selectedProduct',
     SELECTED_PROMOTION: '/selectedPromotion',
+    CART: '/cart'
 }
 

@@ -25,7 +25,12 @@ function Header() {
                     <input type="text" placeholder='Buscar' />
                     <span className="material-symbols-outlined">search</span>
                 </div>
-
+                
+                <div className={style.containerCart}>
+                    <Link href={Routes.CART} className={style.cart}>
+                        <span className="material-symbols-outlined">shopping_cart</span>
+                    </Link>
+                </div>
                 <div className={style.containerAccount}>
                     <Link className={style.account} href={Routes.PROFILE}>
                         <span className="material-symbols-outlined">account_circle</span>

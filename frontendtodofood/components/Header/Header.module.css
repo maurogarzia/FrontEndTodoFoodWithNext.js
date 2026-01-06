@@ -50,11 +50,22 @@
     outline: none;
 }
 .containerAccount{
-    width: 10%;
+    width: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+}
+.containerCart{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.cart{
+    color: white;
+    text-decoration: none;
 }
 .account{
     cursor: pointer;
@@ -74,6 +85,7 @@
 @media (max-width: 800px) {
     .items,
     .search,
+    .cart,
     .containerAccount{
         display: none;
     }
