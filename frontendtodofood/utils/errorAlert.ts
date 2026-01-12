@@ -4,6 +4,7 @@ export const errorAlert = (title: string, text: string) => {
     Swal.fire({
         icon: "error",
         title: title,
-        text: text
+        text: text,
+        heightAuto: false,
     })
 }

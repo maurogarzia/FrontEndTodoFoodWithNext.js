@@ -2,6 +2,7 @@ import { ICart } from '@/types/models/Cart.model'
 import style from './CardCart.module.css'
 import Image from 'next/image'
 import { cartStore } from '@/store/Cart/cart.store'
+import { succesAlert } from '@/utils/succesAlert'
 
 interface CardCartProps{
     cartElement: ICart,
@@ -11,6 +12,11 @@ interface CardCartProps{
 function CardCart({cartElement}: CardCartProps) {
 
     const {removeElement} = cartStore()
+
+    const handleDelete = (id: string) => {
+        removeElement(id)
+        succesAlert('Eliminado', 'Se eliminó el elemento')
+    }
 
     return (
         <div className={style.containerPrincipal}>
@@ -25,7 +31,7 @@ function CardCart({cartElement}: CardCartProps) {
                 <p>${cartElement.price}</p>
             </div>
 
-            <div onClick={() => removeElement(cartElement.id)} className={style.buttonDelete}>
+            <div onClick={() => handleDelete(cartElement.id)} className={style.buttonDelete}>
                 <span className="material-symbols-outlined">delete</span>
             </div>
         </div>

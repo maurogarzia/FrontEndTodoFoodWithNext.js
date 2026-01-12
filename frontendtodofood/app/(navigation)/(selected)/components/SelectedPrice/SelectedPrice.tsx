@@ -6,6 +6,7 @@ import { ICart } from '@/types/models/Cart.model'
 import { IProductsDetails } from '@/types/models/ProductDetail.model'
 import { IPromotionDetails } from '@/types/models/PromotionDetails.model'
 import { cartStore } from '@/store/Cart/cart.store'
+import { errorAlert } from '@/utils/errorAlert'
 
 interface SelectedPriceProps{
     image: string,
@@ -45,7 +46,7 @@ function SelectedPrice({image, price, name} : SelectedPriceProps) {
         }
 
         if (price < 1) {
-            alert('Debe elegir un tamaño')
+            errorAlert('Error','Debe elegir un tamaño')
             return
         }
 

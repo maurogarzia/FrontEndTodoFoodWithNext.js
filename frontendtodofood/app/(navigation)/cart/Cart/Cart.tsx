@@ -4,6 +4,7 @@ import { cartStore } from '@/store/Cart/cart.store'
 import style from './Cart.module.css'
 import CardCart from './components/CardCart/CardCart'
 import { useEffect, useState } from 'react'
+import { succesAlert } from '@/utils/succesAlert'
 
 function Cart( ) {
 
@@ -27,6 +28,11 @@ function Cart( ) {
         alert("Estamos trabajando en la implementación de pago ;)")
     }
 
+    const handleEmptyCart = () => {
+        emptyCart()
+        succesAlert('Vaciado', 'Se vació el carrito')
+    }
+
     return (
         <div className={style.containerPrincipal}>
             <p className={style.title}>Carrito</p>
@@ -39,20 +45,20 @@ function Cart( ) {
 
                     <div className={style.containerResume}>
                         <div className={style.resume}>
-
+                        
                             <p>Cantidad de pedidos: {elements.length}</p>
                             <p>Precio total: $ {priceExcludingIVA}</p>
                             <p>IVA: $ {iva}</p>
                             <p>Precio + IVA: $ {priceExcludingIVA + iva}</p>
-                            <button className={style.payButton} onClick={handleSubmit}>PAGAR</button>
 
+                            <button className={style.payButton} onClick={handleSubmit}>PAGAR</button>
                         </div>
                     </div>
                     
                     <div className={style.items}>
                         <p className={style.subTitle}>
                             Pedidos
-                            <button onClick={() => emptyCart()}>Vaciar carrito</button>    
+                            <button onClick={() => handleEmptyCart()}>Vaciar carrito</button>    
                         </p>
                         <div className={style.cards}>
                             {elements.map((e) => 
