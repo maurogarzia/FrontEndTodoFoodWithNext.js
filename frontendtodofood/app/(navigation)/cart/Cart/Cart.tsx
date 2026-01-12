@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 function Cart( ) {
 
-    const {elements} = cartStore()
+    const {elements, emptyCart} = cartStore()
     const [priceExcludingIVA, setPriceExcludingIVA] = useState<number>(0)
     const iva = priceExcludingIVA * 0.21
     
@@ -50,7 +50,10 @@ function Cart( ) {
                     </div>
                     
                     <div className={style.items}>
-                        <p className={style.subTitle}>Pedidos</p>
+                        <p className={style.subTitle}>
+                            Pedidos
+                            <button onClick={() => emptyCart()}>Vaciar carrito</button>    
+                        </p>
                         <div className={style.cards}>
                             {elements.map((e) => 
                                 <CardCart key={e.id} cartElement={e}/>

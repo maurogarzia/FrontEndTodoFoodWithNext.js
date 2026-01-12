@@ -44,6 +44,21 @@
     font-size: 25px;
     margin-left: 10px;
     margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.subTitle button{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E95708;
+    color: white;
+    cursor: pointer;
+}
+.subTitle button:hover{
+    background-color: white;
+    color: #E95708;
+    transition: 0.2s ease;
 }
 .cards{
     padding: 10px;
