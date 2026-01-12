@@ -20,11 +20,6 @@ function Header() {
                     <Link className={style.item} href={Routes.SUCURSALES}>Sucursales</Link>
                     
                 </div>
-
-                <div className={style.search}>
-                    <input type="text" placeholder='Buscar' />
-                    <span className="material-symbols-outlined">search</span>
-                </div>
                 
                 <div className={style.containerCart}>
                     <Link href={Routes.CART} className={style.cart}>

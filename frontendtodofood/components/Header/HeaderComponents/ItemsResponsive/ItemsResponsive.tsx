@@ -9,7 +9,6 @@ interface Props {
 function ItemsResponsive({setView} : Props ) {
     return (
         <div className={style.containerPrincipal}>
-            <input type="text" placeholder='Buscar...'/>
             <Link className={style.link} href={Routes.PROMOTIONS} onClick={() => setView(false)}>Promociones</Link>
             <Link className={style.link} href={Routes.PRODUCTS} onClick={() => setView(false)}>Productos</Link>
             <Link className={style.link} href={Routes.SUCURSALES} onClick={() => setView(false)}>Sucursales</Link>
