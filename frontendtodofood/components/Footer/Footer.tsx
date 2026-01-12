@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import style from './Footer.module.css'
+import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
 
 function Footer() {
     return (
@@ -6,8 +8,7 @@ function Footer() {
             <p className={style.title}>TodoFood</p>
             <div className={style.column}>
                 <p className={style.subtitle}>Conócenos</p>
-                <p>Locales</p>
-                <p>Franquicias</p>
+                <Link href={Routes.SUCURSALES} className={style.link}>Locales</Link>
                 <p>Sugerencias y Reclamos</p>
                 <p>Términos y condiciones</p>
 
@@ -29,8 +30,8 @@ function Footer() {
             </div>
             <div className={style.column}>
                 <p className={style.subtitle}>Mi cuenta</p>
-                <p>Inicar Sesión</p>
-                <p>Pedir</p>
+                <Link href={Routes.LOGIN} className={style.link}>Iniciar Sesión</Link>
+                <Link href={Routes.PROFILE} className={style.link}>Perfil</Link>
             </div>
         </div>
     )
