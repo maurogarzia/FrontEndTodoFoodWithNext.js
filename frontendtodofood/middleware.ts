@@ -21,6 +21,13 @@ export function middleware(request: NextRequest) {
     try {
         const decoded = jwtDecode<JwtPayload>(token)
 
+        const isExpired = decoded.exp * 1000 < Date.now()
+
+        if (isExpired) {
+            const response = NextResponse.redirect(new URL(Routes.LOGIN, request.url))
+            response.cookies.delete("auth_token")
+            return response
+        }
         
         if (pathname.startsWith('/admin') && decoded.role !== Role.admin) {
             return NextResponse.redirect(new URL(Routes.LOGIN, request.url))

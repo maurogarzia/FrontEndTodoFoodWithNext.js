@@ -67,7 +67,7 @@ function PromotionsAdmin({promotions, images} : PromotionsAdminProps) {
     }
 
     const onCreate = () => {
-        setView(false)
+        setView(true)
         setActiveEntity(null)
     }
 

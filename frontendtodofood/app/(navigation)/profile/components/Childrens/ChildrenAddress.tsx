@@ -19,10 +19,10 @@ function ChildrenAddress({localities} : childrenAddressProps) {
           <p className={style.address}>{activeEntity?.address.street} {activeEntity?.address.number} ({activeEntity?.address.locality.name})</p>
 
           <label>Calle</label>
-          <input type="text" name="street" />
+          <input type="text" name="street" required={true}/>
 
           <label>Número</label>
-          <input type="text" name="number"  />
+          <input type="text" name="number"  required={true}/>
 
           <label htmlFor="">Localidad</label>
           <select name="locality">

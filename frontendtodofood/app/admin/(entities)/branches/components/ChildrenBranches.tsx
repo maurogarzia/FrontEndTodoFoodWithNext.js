@@ -15,9 +15,9 @@ function ChildrenBranches({addresses} : ChildrenBranchesProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name"  defaultValue={activeEntity?.name}/>
+            <input type="text" name="name"  defaultValue={activeEntity?.name} required={true}/>
             <label>Número</label>
-            <input type="text" name="number" defaultValue={activeEntity?.number}/>
+            <input type="text" name="number" defaultValue={activeEntity?.number} required={true}/>
             <label>Dirección</label>
             <select name="address" defaultValue={activeEntity?.address.id}>
                 {addresses.map((address) => (

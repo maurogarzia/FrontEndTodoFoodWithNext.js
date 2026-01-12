@@ -13,11 +13,11 @@ function ChildrenAddress({localities} : ChildrenAddressProps) {
     return (
         <div className={style.containerData}>
             <label htmlFor="">Calle</label>
-            <input type="text" name="street" defaultValue={activeEntity?.street}/>
+            <input type="text" name="street" defaultValue={activeEntity?.street} required={true}/>
             <label htmlFor="">Número</label>
-            <input type="text" name="number" defaultValue={activeEntity?.number} />
+            <input type="text" name="number" defaultValue={activeEntity?.number} required={true}/>
             <label htmlFor="">Localidad</label>
-            <select name="locality" defaultValue={activeEntity?.locality.id}>
+            <select name="locality" defaultValue={activeEntity?.locality.id} >
                 {localities.map((locality) => (
                     <option key={locality.id} value={locality.id}>{locality.name}</option>
                 ))}

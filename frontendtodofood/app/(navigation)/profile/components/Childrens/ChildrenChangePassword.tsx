@@ -4,11 +4,11 @@ function ChildrenChangePassword() {
   return (
     <div className={style.containerData}>
       <label>Anterior contraseña</label>
-      <input type="text" name='oldPassword'/>
+      <input type="text" name='oldPassword' required={true}/>
       <label>Nueva contraseña</label>
-      <input type="text" name="newPassword"/>
+      <input type="text" name="newPassword" required={true}/>
       <label>Confirmar Contraseña</label>
-      <input type="text" name="confirmPassword" />
+      <input type="text" name="confirmPassword" required={true}/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ function ChildrenCountry() {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name='name' defaultValue={activeEntity ? activeEntity.name : ''}/>
+            <input type="text" name='name' defaultValue={activeEntity ? activeEntity.name : ''} required={true}/>
         </div>
     )
 }

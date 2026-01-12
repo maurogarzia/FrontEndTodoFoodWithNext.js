@@ -15,19 +15,19 @@ function ChildrenUsers({addresses} : ChildrenUsersProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity?.name}/>
+            <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
 
             <label>Apellido</label>
-            <input type="text" name="lastname" defaultValue={activeEntity?.lastname} />
+            <input type="text" name="lastname" defaultValue={activeEntity?.lastname} required={true}/>
 
             <label>Nombre usuario</label>
-            <input type="text" name="username" defaultValue={activeEntity?.username}/>
+            <input type="text" name="username" defaultValue={activeEntity?.username} required={true}/>
 
             <label>Email</label>
-            <input type="text" name="email" defaultValue={activeEntity?.email} />
+            <input type="text" name="email" defaultValue={activeEntity?.email} required={true}/>
 
             <label>Teléfono</label>
-            <input type="text" name="phone" defaultValue={activeEntity?.phone || ''}/>
+            <input type="text" name="phone" defaultValue={activeEntity?.phone || ''} required={true}/>
 
             <label>Rol</label>
             <select name="role" defaultValue={activeEntity?.role}>

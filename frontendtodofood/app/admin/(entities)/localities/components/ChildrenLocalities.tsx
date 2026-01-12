@@ -13,9 +13,9 @@ function ChildrenLocality({provinces}: ChildrenLocalityProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity?.name}/>
+            <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
             <label htmlFor="">Código postal</label>
-            <input type="text" name="cp" defaultValue={activeEntity?.cp}/>
+            <input type="text" name="cp" defaultValue={activeEntity?.cp} required={true}/>
             <label >Provincia</label>
             <select name="province" defaultValue={activeEntity?.province.id}>
                 {provinces.map((province) => (

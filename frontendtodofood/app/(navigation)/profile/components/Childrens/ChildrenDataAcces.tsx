@@ -8,9 +8,9 @@ function ChildrenDataAcces() {
   return (
     <div className={style.containerData}>
       <label>Email</label>
-      <input type="text" name='email' defaultValue={activeEntity?.email}/>
+      <input type="text" name='email' defaultValue={activeEntity?.email} required={true}/>
       <label>Nombre de usuario</label>
-      <input type="text" name="username" defaultValue={activeEntity?.username}/>
+      <input type="text" name="username" defaultValue={activeEntity?.username} required={true}/>
     </div>
   )
 }

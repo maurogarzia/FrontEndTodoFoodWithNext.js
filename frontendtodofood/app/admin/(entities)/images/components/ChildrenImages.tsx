@@ -17,7 +17,7 @@ function ChildrenImages() {
             }
 
             <label htmlFor="">Seleccionar archivo</label>
-            <input type="file" name="file"/>
+            <input type="file" name="file" required={true}/>
         </div>
     )
 }

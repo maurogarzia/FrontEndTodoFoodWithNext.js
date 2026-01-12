@@ -16,10 +16,10 @@ function ChildrenProductDetails({sizes, products} : ChildrenProductDetailsProps)
     return (
         <div className={style.containerData}>
             <label>Stock</label>
-            <input type="text" name="stock" defaultValue={activeEntity?.stock}/>
+            <input type="text" name="stock" defaultValue={activeEntity?.stock} required={true}/>
 
             <label>Precio</label>
-            <input type="text" name="price" defaultValue={activeEntity?.price}/>
+            <input type="text" name="price" defaultValue={activeEntity?.price} required={true}/>
 
             <label>Tamaño</label>
             <select name="size" defaultValue={activeEntity?.size.id!}>

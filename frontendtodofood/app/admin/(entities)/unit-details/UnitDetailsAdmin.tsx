@@ -63,7 +63,7 @@ function UnitDetailsAdmin({unitDetails, productDetails} : UnitDetailsAdminProps)
     const children = <ChildrenUnitDetails productDetails={productDetails}/>
 
     const onCreate = () => {
-        setView(false)
+        setView(true)
         setActiveEntity(null)
     }
 

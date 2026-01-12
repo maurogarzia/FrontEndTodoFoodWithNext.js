@@ -17,7 +17,7 @@ function ChildrenProvince({countries} : ChildrenProvinceProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity ? activeEntity.name : ''}/>
+            <input type="text" name="name" defaultValue={activeEntity ? activeEntity.name : ''} required={true}/>
             <label>País</label>
             <select name="country" defaultValue={activeEntity ? activeEntity.country.name : ''}>
                 {countries?.map((country) => (

@@ -13,16 +13,16 @@ function ChildrenPromotion({images} : ChildrenPromotionProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity?.name} />
+            <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
 
             <label>Fecha Inicio</label>
-            <input type="date" name="initDate" defaultValue={String(activeEntity?.initDate)} />
+            <input type="date" name="initDate" defaultValue={String(activeEntity?.initDate)} required={true}/>
 
             <label>Fecha Fin</label>
-            <input type="date" name="finallyDate" defaultValue={String(activeEntity?.finallyDate)} />
+            <input type="date" name="finallyDate" defaultValue={String(activeEntity?.finallyDate)} required={true}/>
 
             <label>Descripción</label>
-            <input type="text" name="description" defaultValue={activeEntity?.description}/>
+            <input type="text" name="description" defaultValue={activeEntity?.description} required={true}/>
 
             <label>Id imágen</label>
             <select name="image" defaultValue={activeEntity?.image.id}>

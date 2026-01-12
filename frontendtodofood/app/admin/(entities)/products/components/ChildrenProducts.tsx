@@ -15,7 +15,7 @@ function ChildrenProducts({categories, images} : ChildrenProductsProps) {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity?.name} />
+            <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
 
             <label>Categoria</label>
             <select name="category" defaultValue={activeEntity?.category?.id!}>
@@ -32,7 +32,7 @@ function ChildrenProducts({categories, images} : ChildrenProductsProps) {
             </select>
 
             <label>Descripcion</label>
-            <textarea name="description" defaultValue={activeEntity?.description}></textarea>
+            <textarea name="description" defaultValue={activeEntity?.description} required={true}></textarea>
         </div>
     )
 }

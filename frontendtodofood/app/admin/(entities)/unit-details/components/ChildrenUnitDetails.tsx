@@ -13,7 +13,7 @@ function ChildrenUnitDetails({productDetails} : ChildrenUnitDetailsProps) {
     return (
         <div className={style.containerData}>
             <label>Cantidad</label>
-            <input type="text" name="quantity" defaultValue={activeEntity?.quantity} />
+            <input type="text" name="quantity" defaultValue={activeEntity?.quantity} required={true}/>
             <label>Detalle Producto</label>
             <select name="productDetail" defaultValue={activeEntity?.productDetails.id}>
                 {productDetails.map((detail) => (

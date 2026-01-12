@@ -8,7 +8,7 @@ function ChildrenSize() {
     return (
         <div className={style.containerData}>
             <label>Nombre</label>
-            <input type="text" name="name" defaultValue={activeEntity?.name}/>
+            <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
         </div>
     )
 }

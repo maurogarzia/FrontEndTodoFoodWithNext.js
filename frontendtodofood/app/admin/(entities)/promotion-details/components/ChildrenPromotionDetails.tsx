@@ -20,10 +20,10 @@ function ChildrenPromotionDetails({promotions, unitaryDetails} : ChildrenPromoti
     return (
         <div className={style.containerData}>
             <label>Descuento</label>
-            <input type="text" name='discount' defaultValue={activeEntity?.discount}/>
+            <input type="text" name='discount' defaultValue={activeEntity?.discount} required={true}/>
 
             <label>Precio</label>
-            <input type="text" name="price" defaultValue={activeEntity?.price} />
+            <input type="text" name="price" defaultValue={activeEntity?.price} required={true}/>
 
             <label>Promoción</label>
             <select name="promotion" defaultValue={activeEntity?.promotion.id}>
