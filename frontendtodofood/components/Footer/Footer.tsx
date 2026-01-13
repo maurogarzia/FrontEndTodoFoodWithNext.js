@@ -10,7 +10,7 @@ function Footer() {
                 <p className={style.subtitle}>Conócenos</p>
                 <Link href={Routes.SUCURSALES} className={style.link}>Locales</Link>
                 <p>Sugerencias y Reclamos</p>
-                <p>Términos y condiciones</p>
+                <Link href={Routes.TERMS_AND_CONDITIONS}>Términos y condiciones</Link>
 
             </div>
             <div className={style.column}>
