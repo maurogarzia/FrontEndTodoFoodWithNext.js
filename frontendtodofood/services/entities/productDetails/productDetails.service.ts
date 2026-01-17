@@ -1,6 +1,6 @@
-import { IProductsDetails, IRequestProductsDetails } from "@/types/models/ProductDetail.model"
+import { IProductsDetails, IRequestProductsDetails } from "../../../types/models/ProductDetail.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllProductsDetails = () : Promise<IProductsDetails[]> => {
     return getAll<IProductsDetails>(FetchEntities.BASE_PRODUCT_DETAIL)

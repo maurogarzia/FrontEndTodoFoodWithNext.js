@@ -1,10 +1,10 @@
 'use client'
 
-import { cartStore } from '@/store/Cart/cart.store'
+import { cartStore } from '../../../../store/Cart/cart.store'
 import style from './Cart.module.css'
 import CardCart from './components/CardCart/CardCart'
 import { useEffect, useState } from 'react'
-import { succesAlert } from '@/utils/succesAlert'
+import { succesAlert } from '../../../../utils/succesAlert'
 
 function Cart( ) {
 

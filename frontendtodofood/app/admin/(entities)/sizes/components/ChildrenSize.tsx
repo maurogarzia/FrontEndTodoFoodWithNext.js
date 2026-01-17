@@ -1,4 +1,4 @@
-import { sizeStore } from '@/store/Size/size.store'
+import { sizeStore } from '../../../../../store/Size/size.store'
 import style from '../../EntityAdmin.module.css'
 
 function ChildrenSize() {

@@ -1,7 +1,7 @@
-import { ICategory } from '@/types/models/Category.model'
+import { ICategory } from '../../../../../types/models/Category.model'
 import style from '../../EntityAdmin.module.css'
-import { IImage } from '@/types/models/Image.model'
-import { productStore } from '@/store/Product/product.store'
+import { IImage } from '../../../../../types/models/Image.model'
+import { productStore } from '../../../../../store/Product/product.store'
 
 interface ChildrenProductsProps{
     categories: ICategory[],

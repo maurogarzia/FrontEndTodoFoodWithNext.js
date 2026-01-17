@@ -1,9 +1,9 @@
 'use client'
 
-import { IProductsDetails } from '@/types/models/ProductDetail.model'
+import { IProductsDetails } from '../../../../../../types/models/ProductDetail.model'
 import style from './List.module.css'
 import { Dispatch, SetStateAction } from 'react'
-import { productDetailsStore } from '@/store/ProductDetails/productDetails.store'
+import { productDetailsStore } from '../../../../../../store/ProductDetails/productDetails.store'
 
 interface ListProps{
     details: IProductsDetails[],

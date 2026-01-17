@@ -1,7 +1,7 @@
-import { deleted, getAll, getById, post, put } from "@/services/core/crud.service"
-import { IImage } from "@/types/models/Image.model"
-import { FetchEntities } from "@/urls/FetchEntities"
-import { getToken } from "@/utils/getToken"
+import { deleted, getAll, getById, post, put } from "../../../services/core/crud.service"
+import { IImage } from "../../../types/models/Image.model"
+import { FetchEntities } from "../../../urls/FetchEntities"
+import { getToken } from "../../../utils/getToken"
 
 export const getAllImages= () : Promise<IImage[]> => {
     return getAll<IImage>(FetchEntities.BASE_IMAGES)

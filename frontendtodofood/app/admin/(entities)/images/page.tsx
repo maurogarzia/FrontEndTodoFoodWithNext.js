@@ -1,4 +1,4 @@
-import { getAllImages } from '@/services/entities/images/images.service'
+import { getAllImages } from '../../../../services/entities/images/images.service'
 import ImagesAdmin from './ImagesAdmin'
 
 async function getData(){

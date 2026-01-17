@@ -1,6 +1,6 @@
-import { userStore } from '@/store/User/user.store'
+import { userStore } from '../../../../../store/User/user.store'
 import style from '../Children.module.css'
-import { ILocality } from '@/types/models/Locality.model'
+import { ILocality } from '../../../../../types/models/Locality.model'
 
 interface childrenAddressProps{
   localities: ILocality[]

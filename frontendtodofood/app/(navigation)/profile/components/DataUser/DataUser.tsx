@@ -3,7 +3,7 @@
 import style from './DataUser.module.css'
 
 import { logout } from '../../logout'
-import { IUser } from '@/types/models/Users.model'
+import { IUser } from '../../../../../types/models/Users.model'
 
 interface DataUSerProps{
     loginUser: IUser

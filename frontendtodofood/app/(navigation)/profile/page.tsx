@@ -1,11 +1,11 @@
-import style from './Profile.module.css'
-import DataUser from './components/DataUser/DataUser'
-import DataAccess from './components/DataAccess/DataAccess'
-import { getByUsername } from '@/services/entities/users/users.service'
+
+
+
+import { getByUsername } from '../../../services/entities/users/users.service'
 import { logout } from './logout'
 import ProfilePage from './ProfilePage'
-import { getAllLocalities } from '@/services/entities/locality/locatlity.service'
-import { getToken } from '@/utils/getToken'
+import { getAllLocalities } from '../../../services/entities/locality/locatlity.service'
+import { getToken } from '../../../utils/getToken'
 
 
 async function getUser() {

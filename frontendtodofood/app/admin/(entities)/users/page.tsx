@@ -1,6 +1,6 @@
-import { getAllUsers } from "@/services/entities/users/users.service"
+import { getAllUsers } from "../../../../services/entities/users/users.service"
 import UsersAdmin from "./UsersAdmin"
-import { getAllAddresses } from "@/services/entities/address/address.service"
+import { getAllAddresses } from "../../../../services/entities/address/address.service"
 
 async function getData() {
   const users = await getAllUsers()

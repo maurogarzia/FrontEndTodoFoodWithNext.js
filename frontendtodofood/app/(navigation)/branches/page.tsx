@@ -1,4 +1,4 @@
-import { getAllBranches } from "@/services/entities/branche/branche.service"
+import { getAllBranches } from "../../../services/entities/branche/branche.service"
 import style from '../EntityStyle.module.css'
 import CardBranch from "./components/CardBranch/CardBranch"
 

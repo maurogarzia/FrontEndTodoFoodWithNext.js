@@ -1,9 +1,9 @@
 "use client"
 
 
-import { provinceStore } from '@/store/Province/province.store'
+import { provinceStore } from '../../../../../store/Province/province.store'
 import style from '../../EntityAdmin.module.css'
-import { ICountry } from '@/types/models/Country,model'
+import { ICountry } from '../../../../../types/models/Country,model'
 
 
 interface ChildrenProvinceProps {

@@ -1,4 +1,4 @@
-import { ICart } from "@/types/models/Cart.model";
+import { ICart } from "../../types/models/Cart.model";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 

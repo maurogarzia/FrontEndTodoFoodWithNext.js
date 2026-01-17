@@ -1,6 +1,6 @@
-import { ISize } from "@/types/models/Size.model"
+import { ISize } from "../../../types/models/Size.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllSizes= () : Promise<ISize[]> => {
     return getAll<ISize>(FetchEntities.BASE_SIZES)

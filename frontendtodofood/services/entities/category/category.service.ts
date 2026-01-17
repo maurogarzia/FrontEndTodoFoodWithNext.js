@@ -1,6 +1,6 @@
-import { ICategory } from "@/types/models/Category.model"
+import { ICategory } from "../../../types/models/Category.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllCategories= () : Promise<ICategory[]> => {
     return getAll<ICategory>(FetchEntities.BASE_CATEGORIES)

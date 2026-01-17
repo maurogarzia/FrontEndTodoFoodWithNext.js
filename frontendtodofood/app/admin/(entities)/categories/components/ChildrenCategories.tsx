@@ -1,4 +1,4 @@
-import { categoryStore } from '@/store/Category/category.store'
+import { categoryStore } from '../../../../../store/Category/category.store'
 import style from '../../EntityAdmin.module.css'
 
 function ChildrenCategories() {

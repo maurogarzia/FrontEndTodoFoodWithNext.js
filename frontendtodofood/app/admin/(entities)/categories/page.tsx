@@ -1,4 +1,4 @@
-import { getAllCategories } from "@/services/entities/category/category.service"
+import { getAllCategories } from "../../../../services/entities/category/category.service"
 import CategoriesAdmin from "./CategoriesAdmin"
 
 async function getData() {

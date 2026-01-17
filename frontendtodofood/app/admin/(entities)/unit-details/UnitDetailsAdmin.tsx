@@ -1,17 +1,17 @@
 "use client"
 
-import { IRequestUnitaryDetails, IUnitaryDetails } from '@/types/models/UnitaryDetails.model'
+import { IRequestUnitaryDetails, IUnitaryDetails } from '../../../../types/models/UnitaryDetails.model'
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import Buttons from '../../components/Buttons/Buttons'
-import { IProductsDetails } from '@/types/models/ProductDetail.model'
-import { modalStore } from '@/store/Modal/modal.store'
-import { unitaryDetailsStore } from '@/store/UnitaryDetails/unitaryDetails.store'
+import { IProductsDetails } from '../../../../types/models/ProductDetail.model'
+import { modalStore } from '../../../../store/Modal/modal.store'
+import { unitaryDetailsStore } from '../../../../store/UnitaryDetails/unitaryDetails.store'
 import { useRouter } from 'next/navigation'
-import { createUnitaryDetail, deleteUnitaryDetail, updatedUnitaryDetail } from '@/services/entities/unitaryDetails/unitaryDetails.service'
+import { createUnitaryDetail, deleteUnitaryDetail, updatedUnitaryDetail } from '../../../../services/entities/unitaryDetails/unitaryDetails.service'
 import ChildrenUnitDetails from './components/ChildrenUnitDetails'
-import Modal from '@/components/Modal/Modal'
+import Modal from '../../../../components/Modal/Modal'
 
 interface UnitDetailsAdminProps{
     unitDetails: IUnitaryDetails[],

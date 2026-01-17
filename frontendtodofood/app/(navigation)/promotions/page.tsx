@@ -1,6 +1,6 @@
-import { getAllPromotions } from '@/services/entities/promotion/promotion.service'
+import { getAllPromotions } from '../../../services/entities/promotion/promotion.service'
 import style from '../EntityStyle.module.css'
-import Card from '@/components/Card/Card'
+import Card from '../../../components/Card/Card'
 
 async function getData() {
   return await getAllPromotions()

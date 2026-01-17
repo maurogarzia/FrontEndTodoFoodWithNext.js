@@ -1,4 +1,4 @@
-import { getAllProducts } from "@/services/entities/products/products.service"
+import { getAllProducts } from "../../../services/entities/products/products.service"
 import style from '../EntityStyle.module.css'
 import ProductsByCategory from "./components/ProductsByCategory/ProductsByCategory"
 

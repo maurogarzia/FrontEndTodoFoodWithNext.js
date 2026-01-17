@@ -1,6 +1,6 @@
-import { ICountry } from "@/types/models/Country,model"
+import { ICountry } from "../../../types/models/Country,model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllCountries = () : Promise<ICountry[]> => {
     return getAll<ICountry>(FetchEntities.BASE_COUNTRY)

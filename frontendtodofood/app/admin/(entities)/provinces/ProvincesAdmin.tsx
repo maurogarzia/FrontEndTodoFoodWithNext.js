@@ -1,16 +1,16 @@
 "use client"
 
-import { IProvince, IRequestProvince } from "@/types/models/Province.model"
+import { IProvince, IRequestProvince } from "../../../../types/models/Province.model"
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from "../../components/TitleAndButton/TitleAndButton"
 import TableAdmin, { TableColumn } from "../../components/TableAdmin/TableAdmin"
 import Buttons from "../../components/Buttons/Buttons"
-import { provinceStore } from "@/store/Province/province.store"
-import { modalStore } from "@/store/Modal/modal.store"
+import { provinceStore } from "../../../../store/Province/province.store"
+import { modalStore } from "../../../../store/Modal/modal.store"
 import ChildrenProvince from "./components/ChildrenProvince"
-import Modal from "@/components/Modal/Modal"
-import { createProvince, updatedProvince } from "@/services/entities/province/province.service"
-import { ICountry } from "@/types/models/Country,model"
+import Modal from "../../../../components/Modal/Modal"
+import { createProvince, updatedProvince } from "../../../../services/entities/province/province.service"
+import { ICountry } from "../../../../types/models/Country,model"
 import { useRouter } from "next/navigation"
 
 interface ProvincessAdminProps {

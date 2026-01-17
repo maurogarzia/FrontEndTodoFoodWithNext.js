@@ -1,14 +1,14 @@
 "use client"
 
-import { ICountry } from '@/types/models/Country,model'
+import { ICountry } from '../../../../types/models/Country,model'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import style from '../EntityAdmin.module.css'
 import Buttons from '../../components/Buttons/Buttons'
-import { countryStore } from '@/store/Country/country.store'
-import { modalStore } from '@/store/Modal/modal.store'
-import Modal from '@/components/Modal/Modal'
-import { createCountry, deleteCountry, updatedCountry } from '@/services/entities/country/country.service'
+import { countryStore } from '../../../../store/Country/country.store'
+import { modalStore } from '../../../../store/Modal/modal.store'
+import Modal from '../../../../components/Modal/Modal'
+import { createCountry, deleteCountry, updatedCountry } from '../../../../services/entities/country/country.service'
 import ChildrenCountry from './components/ChildrenCountries'
 import { useRouter } from 'next/navigation'
 

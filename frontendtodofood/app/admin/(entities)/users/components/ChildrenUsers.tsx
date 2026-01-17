@@ -1,7 +1,7 @@
-import { IAddress } from '@/types/models/Address.model'
+import { IAddress } from '../../../../../types/models/Address.model'
 import style from '../../EntityAdmin.module.css'
-import { userStore } from '@/store/User/user.store'
-import { Role } from '@/types/enums/Rol'
+import { userStore } from '../../../../../store/User/user.store'
+import { Role } from '../../../../../types/enums/Rol'
 
 interface ChildrenUsersProps{
     addresses: IAddress[]

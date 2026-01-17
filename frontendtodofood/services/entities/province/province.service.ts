@@ -1,6 +1,6 @@
-import { IProvince, IRequestProvince } from "@/types/models/Province.model"
+import { IProvince, IRequestProvince } from "../../../types/models/Province.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 
 export const getAllProvinces = () : Promise<IProvince[]> => {

@@ -1,4 +1,3 @@
-import { Role } from '@/types/enums/Rol'
 import style from '../../EntityAdmin.module.css'
 
 

@@ -1,8 +1,8 @@
-import { ICart } from '@/types/models/Cart.model'
+import { ICart } from '../../../../../../types/models/Cart.model'
 import style from './CardCart.module.css'
 import Image from 'next/image'
-import { cartStore } from '@/store/Cart/cart.store'
-import { succesAlert } from '@/utils/succesAlert'
+import { cartStore } from '../../../../../../store/Cart/cart.store'
+import { succesAlert } from '../../../../../../utils/succesAlert'
 
 interface CardCartProps{
     cartElement: ICart,

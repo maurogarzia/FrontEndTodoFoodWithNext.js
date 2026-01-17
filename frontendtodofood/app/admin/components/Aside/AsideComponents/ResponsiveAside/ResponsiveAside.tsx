@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import style from './ResponsiveASide.module.css'
-import { AdminRoutes } from '@/routes/AdminRoutes/routes.admin'
+import { AdminRoutes } from '../../../../../../routes/AdminRoutes/routes.admin'
 
 interface ResponsiveASideProps{
     setOpenAside: React.Dispatch<React.SetStateAction<boolean>>

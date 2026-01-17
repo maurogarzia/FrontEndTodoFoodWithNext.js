@@ -2,11 +2,9 @@ import Image from 'next/image'
 import style from './SelectedPrice.module.css'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ICart } from '@/types/models/Cart.model'
-import { IProductsDetails } from '@/types/models/ProductDetail.model'
-import { IPromotionDetails } from '@/types/models/PromotionDetails.model'
-import { cartStore } from '@/store/Cart/cart.store'
-import { errorAlert } from '@/utils/errorAlert'
+import { ICart } from '../../../../../types/models/Cart.model'
+import { cartStore } from '../../../../../store/Cart/cart.store'
+import { errorAlert } from '../../../../../utils/errorAlert'
 
 interface SelectedPriceProps{
     image: string,

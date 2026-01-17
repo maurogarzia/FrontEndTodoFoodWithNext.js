@@ -2,10 +2,9 @@
 
 import Link from 'next/link'
 import style from '../../Form.module.css'
-import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
+import { Routes } from '../../../../routes/NavigationRoutes/routes.navigation'
 import { registerActions } from '../actions'
 import { useActionState } from 'react'
-
 
 const initialState = {error : ""}
 

@@ -1,6 +1,6 @@
-import { IAddress, IRequestAddress } from "@/types/models/Address.model"
+import { IAddress, IRequestAddress } from "../../../types/models/Address.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllAddresses = () : Promise<IAddress[]> => {
     return getAll<IAddress>(FetchEntities.BASE_ADDRESS)

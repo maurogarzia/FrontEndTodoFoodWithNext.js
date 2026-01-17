@@ -1,6 +1,6 @@
-import { IProducts, IRequestProducts } from "@/types/models/Product.model"
+import { IProducts, IRequestProducts } from "../../../types/models/Product.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllProducts = () : Promise<IProducts[]> => {
     return getAll<IProducts>(FetchEntities.BASE_PRODUCT)

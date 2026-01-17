@@ -1,8 +1,8 @@
 'use client'
 
-import { IPromotionDetails } from '@/types/models/PromotionDetails.model'
+import { IPromotionDetails } from '../../../../types/models/PromotionDetails.model'
 import style from '../Selected.module.css'
-import { promotionStore } from '@/store/Promotion/promotion.store'
+import { promotionStore } from '../../../../store/Promotion/promotion.store'
 import { useState } from 'react'
 import SelectedPrice from '../components/SelectedPrice/SelectedPrice'
 

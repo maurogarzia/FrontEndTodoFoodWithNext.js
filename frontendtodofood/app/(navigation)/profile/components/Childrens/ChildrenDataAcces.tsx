@@ -1,4 +1,4 @@
-import { userStore } from '@/store/User/user.store'
+import { userStore } from '../../../../../store/User/user.store'
 import style from '../Children.module.css'
 
 function ChildrenDataAcces() {

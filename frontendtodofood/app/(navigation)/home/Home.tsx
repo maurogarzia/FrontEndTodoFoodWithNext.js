@@ -1,13 +1,12 @@
 "use client"
 
-import { IPromotion } from '@/types/models/Promotions.model'
+import { IPromotion } from '../../../types/models/Promotions.model'
 import style from './home.module.css'
-import Card from '@/components/Card/Card'
+import Card from '../../../components/Card/Card'
 import image1 from '../../../assets/imagesCarrusel/image1.webp'
 import image2 from '../../../assets/imagesCarrusel/image2.webp'
 import image3 from '../../../assets/imagesCarrusel/image3.webp'
 import image4 from '../../../assets/imagesCarrusel/image4.webp'
-import img from '../../../assets/image.png'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 

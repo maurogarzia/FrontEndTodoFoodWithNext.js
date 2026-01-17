@@ -1,6 +1,6 @@
-import { IPromotion, IRequestPromotion } from "@/types/models/Promotions.model"
+import { IPromotion, IRequestPromotion } from "../../../types/models/Promotions.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllPromotions = () : Promise<IPromotion[]> => {
     return getAll<IPromotion>(FetchEntities.BASE_PROMOTIONS)

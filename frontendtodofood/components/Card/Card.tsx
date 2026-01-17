@@ -1,15 +1,15 @@
 "use client"
 
-import { ICategory } from "@/types/models/Category.model"
-import { IImage } from "@/types/models/Image.model"
+import { ICategory } from "../../types/models/Category.model"
+import { IImage } from "../../types/models/Image.model"
 import Image from "next/image"
 import style from './Card.module.css'
-import { productStore } from "@/store/Product/product.store"
-import { promotionStore } from "@/store/Promotion/promotion.store"
-import { IProducts } from "@/types/models/Product.model"
-import { IPromotion } from "@/types/models/Promotions.model"
+import { productStore } from "../../store/Product/product.store"
+import { promotionStore } from "../../store/Promotion/promotion.store"
+import { IProducts } from "../../types/models/Product.model"
+import { IPromotion } from "../../types/models/Promotions.model"
 import { useRouter } from "next/navigation"
-import { Routes } from "@/routes/NavigationRoutes/routes.navigation"
+import { Routes } from "../../routes/NavigationRoutes/routes.navigation"
 
 interface Props{
     entity: IProducts | IPromotion

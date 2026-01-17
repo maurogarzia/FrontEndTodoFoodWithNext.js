@@ -1,6 +1,6 @@
-import { ILocality, IRequestLocality } from "@/types/models/Locality.model"
+import { ILocality, IRequestLocality } from "../../../types/models/Locality.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllLocalities = () : Promise<ILocality[]> => {
     return getAll<ILocality>(FetchEntities.BASE_LOCALITY)

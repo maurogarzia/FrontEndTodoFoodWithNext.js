@@ -1,5 +1,5 @@
 "use server"
-import { getToken } from "@/utils/getToken"
+import { getToken } from "../../utils/getToken"
 
 
 export const getAll = async <T> (url: string) : Promise<T[]>=> {

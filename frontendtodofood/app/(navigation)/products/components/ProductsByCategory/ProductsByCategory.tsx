@@ -1,6 +1,6 @@
-import { IProducts } from '@/types/models/Product.model'
+import { IProducts } from '../../../../../types/models/Product.model'
 import style from './ProductsByCategory.module.css'
-import Card from '@/components/Card/Card'
+import Card from '../../../../../components/Card/Card'
 
 interface ProductsByCategoryProps{
     title: string

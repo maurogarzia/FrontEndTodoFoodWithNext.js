@@ -1,6 +1,6 @@
-import { IBranch, IRequestBranch } from "@/types/models/Branch.model"
+import { IBranch, IRequestBranch } from "../../../types/models/Branch.model"
 import { deleted, getAll, getById, post, put } from "../../core/crud.service"
-import { FetchEntities } from "@/urls/FetchEntities"
+import { FetchEntities } from "../../../urls/FetchEntities"
 
 export const getAllBranches= () : Promise<IBranch[]> => {
     return getAll<IBranch>(FetchEntities.BASE_BRANCHES)

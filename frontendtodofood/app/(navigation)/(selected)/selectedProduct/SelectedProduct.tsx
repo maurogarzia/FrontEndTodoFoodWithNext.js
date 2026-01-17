@@ -1,12 +1,12 @@
 "use client"
 
-import { productStore } from '@/store/Product/product.store'
+import { productStore } from '../../../../store/Product/product.store'
 import style from '../Selected.module.css'
-import { IProductsDetails } from "@/types/models/ProductDetail.model"
+import { IProductsDetails } from "../../../../types/models/ProductDetail.model"
 import List from './components/List/List'
 import { useState } from 'react'
 import SelectedPrice from '../components/SelectedPrice/SelectedPrice'
-import { productDetailsStore } from '@/store/ProductDetails/productDetails.store'
+import { productDetailsStore } from '../../../../store/ProductDetails/productDetails.store'
 
 interface SelectedProductProps{
   productsDetails: IProductsDetails[]

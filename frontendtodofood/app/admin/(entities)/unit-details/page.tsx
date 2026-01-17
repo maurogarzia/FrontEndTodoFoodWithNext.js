@@ -1,6 +1,6 @@
-import { getAllUnitaryDetails } from "@/services/entities/unitaryDetails/unitaryDetails.service"
+import { getAllUnitaryDetails } from "../../../../services/entities/unitaryDetails/unitaryDetails.service"
 import UnitDetailsAdmin from "./UnitDetailsAdmin"
-import { getAllProductsDetails } from "@/services/entities/productDetails/productDetails.service"
+import { getAllProductsDetails } from "../../../../services/entities/productDetails/productDetails.service"
 
 async function getData() {
   const unitDetails = await getAllUnitaryDetails()

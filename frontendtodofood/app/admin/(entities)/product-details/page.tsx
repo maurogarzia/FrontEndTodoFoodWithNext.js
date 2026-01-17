@@ -1,7 +1,7 @@
-import { getAllProductsDetails } from "@/services/entities/productDetails/productDetails.service"
+import { getAllProductsDetails } from "../../../../services/entities/productDetails/productDetails.service"
 import ProductDetailsAdmin from "./ProductDetailsAdmin"
-import { getAllSizes } from "@/services/entities/size/size.service"
-import { getAllProducts } from "@/services/entities/products/products.service"
+import { getAllSizes } from "../../../../services/entities/size/size.service"
+import { getAllProducts } from "../../../../services/entities/products/products.service"
 
 async function getData() {
   
