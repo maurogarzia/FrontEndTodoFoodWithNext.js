@@ -77,7 +77,7 @@ function Home({actuallyPromotions} : HomeProps) {
                     <p className={style.emptyPromotions}>No se encuentran promociones con vencimiento en dia de hoy</p>
                 }
                 {actuallyPromotions.map(promotion => 
-                    <Card key={promotion.id} name={promotion.name} image={promotion.image}/>
+                    <Card key={promotion.id} name={promotion.name} image={promotion.image} entity={promotion}/>
                 ) }
             </div>
         </div>
