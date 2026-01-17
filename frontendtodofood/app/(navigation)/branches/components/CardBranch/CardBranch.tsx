@@ -1,6 +1,6 @@
 "use client"
 
-import { IBranch } from '../../../../../types/models/Branch.model'
+import { IBranch } from '@/types/models/Branch.model'
 import style from './CardBranch.module.css'
 
 interface CardBranchProps{

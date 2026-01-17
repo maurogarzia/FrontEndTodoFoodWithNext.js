@@ -1,4 +1,4 @@
-import { getAllCountries } from '../../../../services/entities/country/country.service'
+import { getAllCountries } from '@/services/entities/country/country.service'
 import CountriesAdmin from './CountriesAdmin'
 
 async function getData() {

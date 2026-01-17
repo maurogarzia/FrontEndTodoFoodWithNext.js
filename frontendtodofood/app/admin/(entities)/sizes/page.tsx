@@ -1,4 +1,4 @@
-import { getAllSizes } from "../../../../services/entities/size/size.service"
+import { getAllSizes } from "@/services/entities/size/size.service"
 import SizesAdmin from "./SizesAdmin"
 
 async function getData(){

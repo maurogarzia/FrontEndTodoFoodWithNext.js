@@ -1,6 +1,6 @@
-import { promotionStore } from '../../../../../store/Promotion/promotion.store'
+import { promotionStore } from '@/store/Promotion/promotion.store'
 import style from '../../EntityAdmin.module.css'
-import { IImage } from '../../../../../types/models/Image.model'
+import { IImage } from '@/types/models/Image.model'
 
 interface ChildrenPromotionProps{
     images : IImage[]

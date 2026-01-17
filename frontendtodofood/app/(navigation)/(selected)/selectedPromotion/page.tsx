@@ -1,4 +1,4 @@
-import { getAllPromotionDetails } from "../../../../services/entities/promotionDetails/promotionDetails.service"
+import { getAllPromotionDetails } from "@/services/entities/promotionDetails/promotionDetails.service"
 import SelectedPromotion from "./SelectedPromotion"
 
 async function getData() {

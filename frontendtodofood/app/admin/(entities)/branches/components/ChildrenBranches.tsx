@@ -1,6 +1,6 @@
-import { IAddress } from '../../../../../types/models/Address.model'
+import { IAddress } from '@/types/models/Address.model'
 import style from '../../EntityAdmin.module.css'
-import { branchStore } from '../../../../../store/Branch/branch.store'
+import { branchStore } from '@/store/Branch/branch.store'
 
 interface ChildrenBranchesProps{
     addresses : IAddress[]

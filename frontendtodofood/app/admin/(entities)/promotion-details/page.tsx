@@ -1,7 +1,7 @@
-import { getAllPromotionDetails } from "../../../../services/entities/promotionDetails/promotionDetails.service"
+import { getAllPromotionDetails } from "@/services/entities/promotionDetails/promotionDetails.service"
 import PromotionDetailsAdmin from "./PromotionDetailsAdmin"
-import { getAllPromotions } from "../../../../services/entities/promotion/promotion.service"
-import { getAllUnitaryDetails } from "../../../../services/entities/unitaryDetails/unitaryDetails.service"
+import { getAllPromotions } from "@/services/entities/promotion/promotion.service"
+import { getAllUnitaryDetails } from "@/services/entities/unitaryDetails/unitaryDetails.service"
 
 async function getData(){
   const promotionDetails = await getAllPromotionDetails()

@@ -1,6 +1,6 @@
-import { getAllProvinces } from "../../../../services/entities/province/province.service"
+import { getAllProvinces } from "@/services/entities/province/province.service"
 import ProvincesAdmin from "./ProvincesAdmin"
-import { getAllCountries } from "../../../../services/entities/country/country.service"
+import { getAllCountries } from "@/services/entities/country/country.service"
 
 async function getData() {
   const provinces = await getAllProvinces()

@@ -1,6 +1,6 @@
-import { getAllBranches } from "../../../../services/entities/branche/branche.service"
+import { getAllBranches } from "@/services/entities/branche/branche.service"
 import BranchesAdmin from "./BranchesAdmin"
-import { getAllAddresses } from "../../../../services/entities/address/address.service"
+import { getAllAddresses } from "@/services/entities/address/address.service"
 
 async function getData() {
   const branches = await getAllBranches()

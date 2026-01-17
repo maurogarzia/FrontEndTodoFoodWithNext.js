@@ -1,6 +1,6 @@
-import { getAllAddresses } from "../../../../services/entities/address/address.service"
+import { getAllAddresses } from "@/services/entities/address/address.service"
 import AddressAdmin from "./AddressAdmin"
-import { getAllLocalities } from "../../../../services/entities/locality/locatlity.service"
+import { getAllLocalities } from "@/services/entities/locality/locatlity.service"
 
 async function getData() {
     const addresses = await getAllAddresses()

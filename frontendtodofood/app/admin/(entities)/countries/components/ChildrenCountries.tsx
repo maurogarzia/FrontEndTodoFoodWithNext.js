@@ -1,4 +1,4 @@
-import { countryStore } from '../../../../../store/Country/country.store'
+import { countryStore } from '@/store/Country/country.store'
 import style from '../../EntityAdmin.module.css'
 
 

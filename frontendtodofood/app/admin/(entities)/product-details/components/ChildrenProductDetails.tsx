@@ -1,8 +1,8 @@
-import { ISize } from '../../../../../types/models/Size.model'
+import { ISize } from '@/types/models/Size.model'
 import style from '../../EntityAdmin.module.css'
-import { IProducts } from '../../../../../types/models/Product.model'
+import { IProducts } from '@/types/models/Product.model'
 import Sizes from '../../sizes/page'
-import { productDetailsStore } from '../../../../../store/ProductDetails/productDetails.store'
+import { productDetailsStore } from '@/store/ProductDetails/productDetails.store'
 
 interface ChildrenProductDetailsProps{
     sizes: ISize[],

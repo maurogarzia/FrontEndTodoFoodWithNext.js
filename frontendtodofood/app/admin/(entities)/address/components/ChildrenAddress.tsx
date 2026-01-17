@@ -1,6 +1,6 @@
-import { ILocality } from '../../../../../types/models/Locality.model'
+import { ILocality } from '@/types/models/Locality.model'
 import style from '../../EntityAdmin.module.css'
-import { addressStore } from '../../../../../store/Address/address.store'
+import { addressStore } from '@/store/Address/address.store'
 
 interface ChildrenAddressProps{
     localities: ILocality[]

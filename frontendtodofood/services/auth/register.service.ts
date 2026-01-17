@@ -1,5 +1,5 @@
-import { IRegister } from "../../types/auth/register.model";
-import { NextResponse } from "next/server";
+import { IRegister } from "@/types/auth/register.model";
+import { NextRequest, NextResponse } from "next/server";
 
 const BASE_REGISTER = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/register`
 

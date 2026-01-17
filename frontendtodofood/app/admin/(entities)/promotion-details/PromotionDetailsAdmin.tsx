@@ -1,18 +1,18 @@
 "use client"
 
-import { IPromotionDetails, IRequestPromotionDetails } from '../../../../types/models/PromotionDetails.model'
+import { IPromotionDetails, IRequestPromotionDetails } from '@/types/models/PromotionDetails.model'
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import Buttons from '../../components/Buttons/Buttons'
-import { IUnitaryDetails } from '../../../../types/models/UnitaryDetails.model'
-import { IPromotion } from '../../../../types/models/Promotions.model'
-import { promotionDetailsStore } from '../../../../store/PromotionDetails/promotionDetails.store'
-import { modalStore } from '../../../../store/Modal/modal.store'
+import { IUnitaryDetails } from '@/types/models/UnitaryDetails.model'
+import { IPromotion } from '@/types/models/Promotions.model'
+import { promotionDetailsStore } from '@/store/PromotionDetails/promotionDetails.store'
+import { modalStore } from '@/store/Modal/modal.store'
 import { useRouter } from 'next/navigation'
 import ChildrenPromotionDetails from './components/ChildrenPromotionDetails'
-import { createPromotionDetails, deletePromotionDetails, updatedPromotionDetails } from '../../../../services/entities/promotionDetails/promotionDetails.service'
-import Modal from '../../../../components/Modal/Modal'
+import { createPromotionDetails, deletePromotionDetails, updatedPromotionDetails } from '@/services/entities/promotionDetails/promotionDetails.service'
+import Modal from '@/components/Modal/Modal'
 
 
 interface PromotionDetailsAdminProps{

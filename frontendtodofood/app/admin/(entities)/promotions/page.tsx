@@ -1,6 +1,6 @@
-import { getAllPromotions } from "../../../../services/entities/promotion/promotion.service"
+import { getAllPromotions } from "@/services/entities/promotion/promotion.service"
 import PromotionsAdmin from "./PromotionsAdmin"
-import { getAllImages } from "../../../../services/entities/images/images.service"
+import { getAllImages } from "@/services/entities/images/images.service"
 
 async function getData() {
   const promotions = await getAllPromotions()

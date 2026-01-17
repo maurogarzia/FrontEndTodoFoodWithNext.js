@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import style from './Aside.module.css'
-import { AdminRoutes } from '../../../../routes/AdminRoutes/routes.admin'
+import { AdminRoutes } from '@/routes/AdminRoutes/routes.admin'
 import { useState } from 'react'
 import ResponsiveAside from './AsideComponents/ResponsiveAside/ResponsiveAside'
 

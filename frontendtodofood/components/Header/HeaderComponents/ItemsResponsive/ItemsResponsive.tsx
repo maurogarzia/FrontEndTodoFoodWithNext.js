@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import style from './ItemsResponsive.module.css'
-import { Routes } from '../../../../routes/NavigationRoutes/routes.navigation'
+import { Routes } from '@/routes/NavigationRoutes/routes.navigation'
 
 interface Props {
     setView: React.Dispatch<React.SetStateAction<boolean>>

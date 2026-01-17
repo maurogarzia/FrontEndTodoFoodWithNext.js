@@ -1,16 +1,16 @@
 "use client"
-import { IImage } from '../../../../types/models/Image.model'
+import { IImage } from '@/types/models/Image.model'
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import Buttons from '../../components/Buttons/Buttons'
 import Image from 'next/image'
 import ChildrenImages from './components/ChildrenImages'
-import { modalStore } from '../../../../store/Modal/modal.store'
-import { imageStore } from '../../../../store/Image/image.store'
-import { createImage, deletedImage, updatedImages } from '../../../../services/entities/images/images.service'
+import { modalStore } from '@/store/Modal/modal.store'
+import { imageStore } from '@/store/Image/image.store'
+import { createImage, deletedImage, updatedImages } from '@/services/entities/images/images.service'
 import { useRouter } from 'next/navigation'
-import Modal from '../../../../components/Modal/Modal'
+import Modal from '@/components/Modal/Modal'
 
 interface ImagesAdminProps{
     images: IImage[]

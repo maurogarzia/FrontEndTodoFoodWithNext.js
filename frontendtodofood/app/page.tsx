@@ -1,4 +1,4 @@
-import { getAllPromotions } from '../services/entities/promotion/promotion.service';
+import { getAllPromotions } from '@/services/entities/promotion/promotion.service';
 import Home from './(navigation)/home/Home';
 
 

@@ -1,6 +1,6 @@
-import { IProductsDetails } from '../../../../../types/models/ProductDetail.model'
+import { IProductsDetails } from '@/types/models/ProductDetail.model'
 import style from '../../EntityAdmin.module.css'
-import { unitaryDetailsStore } from '../../../../../store/UnitaryDetails/unitaryDetails.store'
+import { unitaryDetailsStore } from '@/store/UnitaryDetails/unitaryDetails.store'
 
 interface ChildrenUnitDetailsProps{
     productDetails: IProductsDetails[]

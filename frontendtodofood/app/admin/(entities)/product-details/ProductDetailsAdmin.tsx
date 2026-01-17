@@ -1,18 +1,18 @@
 "use client"
 
-import { IProductsDetails, IRequestProductsDetails } from '../../../../types/models/ProductDetail.model'
+import { IProductsDetails, IRequestProductsDetails } from '@/types/models/ProductDetail.model'
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from '../../components/TitleAndButton/TitleAndButton'
 import TableAdmin, { TableColumn } from '../../components/TableAdmin/TableAdmin'
 import Buttons from '../../components/Buttons/Buttons'
-import { ISize } from '../../../../types/models/Size.model'
-import { IProducts } from '../../../../types/models/Product.model'
-import { modalStore } from '../../../../store/Modal/modal.store'
-import { productDetailsStore } from '../../../../store/ProductDetails/productDetails.store'
+import { ISize } from '@/types/models/Size.model'
+import { IProducts } from '@/types/models/Product.model'
+import { modalStore } from '@/store/Modal/modal.store'
+import { productDetailsStore } from '@/store/ProductDetails/productDetails.store'
 import ChildrenProductDetails from './components/ChildrenProductDetails'
 import { useRouter } from 'next/navigation'
-import { createProductDetails, deleteProductDetails, updatedProductDetails } from '../../../../services/entities/productDetails/productDetails.service'
-import Modal from '../../../../components/Modal/Modal'
+import { createProductDetails, deleteProductDetails, updatedProductDetails } from '@/services/entities/productDetails/productDetails.service'
+import Modal from '@/components/Modal/Modal'
 
 interface ProductDetailsAdminProps{
   productDetails: IProductsDetails[]

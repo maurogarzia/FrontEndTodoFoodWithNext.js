@@ -1,7 +1,7 @@
-import { IPromotion } from '../../../../../types/models/Promotions.model'
+import { IPromotion } from '@/types/models/Promotions.model'
 import style from '../../EntityAdmin.module.css'
-import { IUnitaryDetails } from '../../../../../types/models/UnitaryDetails.model'
-import { promotionDetailsStore } from '../../../../../store/PromotionDetails/promotionDetails.store'
+import { IUnitaryDetails } from '@/types/models/UnitaryDetails.model'
+import { promotionDetailsStore } from '@/store/PromotionDetails/promotionDetails.store'
 
 interface ChildrenPromotionDetailsProps{
     promotions : IPromotion[],

@@ -1,16 +1,16 @@
 "use client"
 
-import { ISize } from "../../../../types/models/Size.model"
+import { ISize } from "@/types/models/Size.model"
 import TableAdmin, { TableColumn } from "../../components/TableAdmin/TableAdmin"
 import style from '../EntityAdmin.module.css'
 import TitleAndButton from "../../components/TitleAndButton/TitleAndButton"
 import Buttons from "../../components/Buttons/Buttons"
 import { useRouter } from "next/navigation"
-import { modalStore } from "../../../../store/Modal/modal.store"
-import { sizeStore } from "../../../../store/Size/size.store"
-import { createSize, deleteSize, updatedSize } from "../../../../services/entities/size/size.service"
+import { modalStore } from "@/store/Modal/modal.store"
+import { sizeStore } from "@/store/Size/size.store"
+import { createSize, deleteSize, updatedSize } from "@/services/entities/size/size.service"
 import ChildrenSize from "./components/ChildrenSize"
-import Modal from "../../../../components/Modal/Modal"
+import Modal from "@/components/Modal/Modal"
 
 interface SizesAdminProps{
     sizes: ISize[]

@@ -1,5 +1,5 @@
 "use client"
-import { modalStore } from '../../store/Modal/modal.store'
+import { modalStore } from '@/store/Modal/modal.store'
 import style from './Modal.module.css'
 import React from 'react'
 

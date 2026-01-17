@@ -1,8 +1,8 @@
 "use server"
 
-import { register } from "../../../services/auth/register.service"
-import { IRegister } from "../../../types/auth/register.model"
-import { Role } from "../../../types/enums/Rol"
+import { register } from "@/services/auth/register.service"
+import { IRegister } from "@/types/auth/register.model"
+import { Role } from "@/types/enums/Rol"
 import { redirect } from "next/navigation";
 
 export async function registerActions (prevState: {error?: string}, formData: FormData)  {

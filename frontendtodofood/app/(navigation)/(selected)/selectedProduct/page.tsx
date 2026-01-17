@@ -1,4 +1,4 @@
-import { getAllProductsDetails } from "../../../../services/entities/productDetails/productDetails.service"
+import { getAllProductsDetails } from "@/services/entities/productDetails/productDetails.service"
 import SelectedProduct from "./SelectedProduct"
 
 async function getData() {

@@ -1,15 +1,15 @@
 "use client"
 
-import { IUser } from '../../../../../types/models/Users.model'
+import { IUser } from '@/types/models/Users.model'
 import style from './DataAccess.module.css'
-import { modalStore } from '../../../../../store/Modal/modal.store'
+import { modalStore } from '@/store/Modal/modal.store'
 import ChildrenChangePassword from '../Childrens/ChildrenChangePassword'
 import ChildrenDataAcces from '../Childrens/ChildrenDataAcces'
 import ChildrenData from '../Childrens/ChildrenData'
 import { ReactNode } from 'react'
 import ChildrenAddress from '../Childrens/ChildrenAddress'
-import { userStore } from '../../../../../store/User/user.store'
-import { ILocality } from '../../../../../types/models/Locality.model'
+import { userStore } from '@/store/User/user.store'
+import { ILocality } from '@/types/models/Locality.model'
 
 interface DataAccessProps{
     loginUser: IUser

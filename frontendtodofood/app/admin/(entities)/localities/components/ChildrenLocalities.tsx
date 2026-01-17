@@ -1,6 +1,6 @@
-import { IProvince } from '../../../../../types/models/Province.model'
+import { IProvince } from '@/types/models/Province.model'
 import style from '../../EntityAdmin.module.css'
-import { localityStore } from '../../../../../store/Locality/locality.store'
+import { localityStore } from '@/store/Locality/locality.store'
 
 interface ChildrenLocalityProps{
     provinces: IProvince[]

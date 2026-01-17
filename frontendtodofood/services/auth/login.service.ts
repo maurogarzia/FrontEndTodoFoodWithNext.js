@@ -1,4 +1,4 @@
-import { ILogin } from "../../types/auth/login.model";
+import { ILogin } from "@/types/auth/login.model";
 
 const BASE_LOGIN = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`
 

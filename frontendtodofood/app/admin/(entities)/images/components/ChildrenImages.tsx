@@ -1,6 +1,7 @@
-import { imageStore } from '../../../../../store/Image/image.store'
+import { imageStore } from '@/store/Image/image.store'
 import style from '../../EntityAdmin.module.css'
 import Image from 'next/image'
+import { useState } from 'react'
 
 function ChildrenImages() {
 
