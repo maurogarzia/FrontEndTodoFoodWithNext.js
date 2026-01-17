@@ -5,25 +5,17 @@
     "strict": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     "module": "esnext",
-    "moduleResolution": "bundler",
-
+    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     },
-
     "esModuleInterop": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "incremental": true,
-    "plugins": [{ "name": "next" }]
+    "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
