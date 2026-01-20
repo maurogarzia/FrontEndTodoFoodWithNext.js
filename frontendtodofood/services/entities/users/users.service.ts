@@ -1,5 +1,5 @@
+import { JwtPayload } from "@/types/auth/jwtPayload.model"
 import { deleted, getAll, getById, post, put } from "../../../services/core/crud.service"
-import { JwtPayload } from "../../../types/auth/jwtPayload.model"
 import { IPatchUser, IRequestUser, IUser } from "../../../types/models/Users.model"
 import { FetchEntities } from "../../../urls/FetchEntities"
 import { getToken } from "../../../utils/getToken"
