@@ -69,9 +69,10 @@ function CategoriesAdmin({categories} : CategoriesAdminProps) {
                 <Modal
                     title={activeEntity ? 'Editar Categoría' : 'Crear Categoría'}
                     setActiveEntity={setActiveEntity}
-                    children={children}
                     onSubmit={handleSubmit}
-                />
+                >
+                    {children}
+                </Modal>
             </div>
         
         }

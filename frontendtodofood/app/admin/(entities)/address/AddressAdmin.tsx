@@ -76,9 +76,10 @@ function AddressAdmin({addresses, localities} : AddressAdminProps) {
                     <Modal
                         title={activeEntity ? 'Editar Dirección' : 'Crear Dirección'}
                         onSubmit={handleSubmit}
-                        children={children}
                         setActiveEntity={setActiveEntity}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
 
             }

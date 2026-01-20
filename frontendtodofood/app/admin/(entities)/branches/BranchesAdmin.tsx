@@ -76,8 +76,9 @@ function BranchesAdmin({branches, addresses} : BranchesAdminProps) {
                         title={activeEntity ? 'Editar Sucursal' : 'Crear Sucursal'}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                        children={children}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

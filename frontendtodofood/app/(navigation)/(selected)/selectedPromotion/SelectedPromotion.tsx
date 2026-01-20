@@ -17,8 +17,9 @@ function SelectedPromotion({promotionDetails} : SelectedPromotionProps) {
 
     const details = promotionDetails.find(detail => activeEntity?.id === detail.promotion.id)
 
-    const [price, setPrice] = useState<number>(activeEntity ? details?.price! : 0)
+    const price = details?.price ?? 0
     
+    if (!activeEntity) return <div>Selecciona una promoción</div>
 
     return (
         <div className={style.containerPrincipal}>
@@ -31,7 +32,7 @@ function SelectedPromotion({promotionDetails} : SelectedPromotionProps) {
 
                 
                 <div className={style.image}>
-                    <SelectedPrice image={activeEntity?.image.url!} price={price} name={activeEntity?.name!}/>
+                    <SelectedPrice image={activeEntity.image?.url ?? ''} price={price} name={activeEntity.name}/>
                 </div>
 
             </div>

@@ -80,10 +80,11 @@ function PromotionsAdmin({promotions, images} : PromotionsAdminProps) {
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={activeEntity ? 'Editar Promoción' : 'Crear Promoción'}
-                        children={children}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

@@ -18,7 +18,7 @@ function ChildrenProducts({categories, images} : ChildrenProductsProps) {
             <input type="text" name="name" defaultValue={activeEntity?.name} required={true}/>
 
             <label>Categoria</label>
-            <select name="category" defaultValue={activeEntity?.category?.id!}>
+            <select name="category" defaultValue={activeEntity?.category?.id ?? 0}>
                 {categories.map((category) => (
                     <option key={category.id} value={category.id!}>{category.name}</option>
                 ))}

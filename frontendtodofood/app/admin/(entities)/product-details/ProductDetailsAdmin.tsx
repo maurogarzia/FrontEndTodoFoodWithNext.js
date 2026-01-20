@@ -64,7 +64,7 @@ function ProductDetailsAdmin({productDetails, sizes, products} : ProductDetailsA
       router.refresh()
     } else {
       await createProductDetails(productDetails)
-      router.refresh
+      router.refresh()
     }
   }
 
@@ -83,9 +83,10 @@ function ProductDetailsAdmin({productDetails, sizes, products} : ProductDetailsA
           <Modal
             title={activeEntity ? 'Editar Detalle de Producto' : 'Crear Detalle de Producto'}
             setActiveEntity={setActiveEntity}
-            children={children}
             onSubmit={handleSubmit}
-          />
+          >
+            {children}
+          </Modal>
         </div>
       }
 

@@ -8,7 +8,7 @@
     ],
     "strict": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",

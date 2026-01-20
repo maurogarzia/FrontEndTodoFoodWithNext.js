@@ -1,7 +1,6 @@
 import { ISize } from '@/types/models/Size.model'
 import style from '../../EntityAdmin.module.css'
 import { IProducts } from '@/types/models/Product.model'
-import Sizes from '../../sizes/page'
 import { productDetailsStore } from '@/store/ProductDetails/productDetails.store'
 
 interface ChildrenProductDetailsProps{
@@ -22,7 +21,7 @@ function ChildrenProductDetails({sizes, products} : ChildrenProductDetailsProps)
             <input type="text" name="price" defaultValue={activeEntity?.price} required={true}/>
 
             <label>Tamaño</label>
-            <select name="size" defaultValue={activeEntity?.size.id!}>
+            <select name="size" defaultValue={activeEntity?.size.id ?? 0}>
                 {sizes.map((size) => (
                     <option key={size.id} value={size.id!}>{size.name}</option>
                 ))}

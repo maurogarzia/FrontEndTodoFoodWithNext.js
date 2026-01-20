@@ -45,7 +45,7 @@ function Home({actuallyPromotions} : HomeProps) {
         }, 10000);
 
         return () => clearInterval(interval);
-    }, [])
+    }, [carruselArray.length])
     
 
     

@@ -9,7 +9,7 @@ import { provinceStore } from "@/store/Province/province.store"
 import { modalStore } from "@/store/Modal/modal.store"
 import ChildrenProvince from "./components/ChildrenProvince"
 import Modal from "@/components/Modal/Modal"
-import { createProvince, updatedProvince } from "@/services/entities/province/province.service"
+import { createProvince, deleteProvince, updatedProvince } from "@/services/entities/province/province.service"
 import { ICountry } from "@/types/models/Country,model"
 import { useRouter } from "next/navigation"
 
@@ -35,7 +35,10 @@ function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
                     setActiveEntity(province)
                     setView(true)
                 }} 
-                onDelete={(id) => {}}/>
+                onDelete={async(province) => {
+                    await deleteProvince(province.id)
+                    router.refresh()
+                }}/>
             )
         }
     ]
@@ -78,8 +81,9 @@ function ProvincesAdmin({provinces, countries} : ProvincessAdminProps) {
                     title={activeEntity ? 'Editar País' : 'Crear País'}
                     setActiveEntity={setActiveEntity}
                     onSubmit={handleSubmit}
-                    children={children}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

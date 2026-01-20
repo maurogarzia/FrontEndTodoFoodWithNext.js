@@ -9,7 +9,7 @@ import { IAddress } from '@/types/models/Address.model'
 import { modalStore } from '@/store/Modal/modal.store'
 import { userStore } from '@/store/User/user.store'
 import { useRouter } from 'next/navigation'
-import { createUser, deletedUser, updatedUser } from '@/services/entities/users/users.service'
+import { deletedUser, updatedUser } from '@/services/entities/users/users.service'
 import { Role } from '@/types/enums/Rol'
 import Modal from '@/components/Modal/Modal'
 import ChildrenUsers from './components/ChildrenUsers'
@@ -101,8 +101,10 @@ function UsersAdmin({users, addresses} : UsersAdminProps) {
                         title={activeEntity ? 'Editar Usuario' : 'Crear usuario'}
                         onSubmit={handleSubmit}
                         setActiveEntity={setActiveEntity}
-                        children={activeEntity ? childrenUpdate : childrenRegister}
-                    />
+                        
+                    >
+                        {activeEntity ? childrenUpdate : childrenRegister}
+                    </Modal>
                 </div>
             }
 

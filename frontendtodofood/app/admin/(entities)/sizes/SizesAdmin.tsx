@@ -70,10 +70,11 @@ function SizesAdmin({sizes} : SizesAdminProps) {
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={activeEntity ? 'Editar Tamaño' : "Crear Tamaño"}
-                        children={children}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

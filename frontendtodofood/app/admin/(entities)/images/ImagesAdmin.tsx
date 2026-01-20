@@ -46,8 +46,8 @@ function ImagesAdmin({images} : ImagesAdminProps) {
 
         if (file){
             if (activeEntity) {
-                await updatedImages(file, activeEntity?.id!)
-                router.refresh()
+                await updatedImages(file, activeEntity!.id)
+                router.refresh()    
             } else {
                 await createImage(file)
                 router.refresh()
@@ -71,10 +71,11 @@ function ImagesAdmin({images} : ImagesAdminProps) {
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={activeEntity ? 'Editar Imágen' : 'Crear Imágen'}
-                        children={children}
                         onSubmit={handleSubmit}
                         setActiveEntity={setActiveEntity}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
             

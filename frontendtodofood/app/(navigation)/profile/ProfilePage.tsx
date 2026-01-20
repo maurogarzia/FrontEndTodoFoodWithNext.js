@@ -112,10 +112,11 @@ function ProfilePage({loginUser, localities} : ProfilePageProps) {
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={title}
-                        children={children}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
         </div>

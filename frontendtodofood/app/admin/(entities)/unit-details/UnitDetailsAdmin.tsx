@@ -74,10 +74,11 @@ function UnitDetailsAdmin({unitDetails, productDetails} : UnitDetailsAdminProps)
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={activeEntity ? 'Editar Detalle Unitario' : 'Crear Detalle Unitario'}
-                        children={children}
                         onSubmit={handleSubmit}
                         setActiveEntity={setActiveEntity}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

@@ -84,8 +84,9 @@ function ProductsAdmin({products, categories, images} : ProductsAdminProps) {
                         title={activeEntity ? 'Editar Producto' : 'Crear producto'}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                        children={children}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

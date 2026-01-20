@@ -79,8 +79,9 @@ function CountriesAdmin({countries} : CountriesAdminProps) {
               title={activeEntity ? 'Editar País' : 'Crear País'}
               setActiveEntity={setActiveEntity}
               onSubmit={handleSubmit}
-              children={children}
-              />
+              >
+                {children}
+              </Modal>
         </div>
       }
 

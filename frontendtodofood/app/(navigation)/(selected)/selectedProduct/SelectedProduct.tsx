@@ -34,7 +34,7 @@ function SelectedProduct({productsDetails} : SelectedProductProps) {
         </div>
 
         <div className={style.image}>
-          <SelectedPrice image={product?.image.url!} price={price} name={`${productDetail?.product.name!} ${productDetail?.size.name}`}/>
+          <SelectedPrice image={product?.image?.url ?? ""} price={price} name={`${productDetail?.product?.name ?? ""} ${productDetail?.size.name}`}/>
         </div>
 
       </div>

@@ -12,7 +12,7 @@ import { IProvince } from '@/types/models/Province.model'
 import { useRouter } from 'next/navigation'
 import Modal from '@/components/Modal/Modal'
 import ChildrenLocality from './components/ChildrenLocalities'
-import Provinces from '../provinces/page'
+
 
 interface LocalitiesAdminProps{
     localities: ILocality[],
@@ -79,10 +79,11 @@ function LocalitiesAdmin({localities, provinces} : LocalitiesAdminProps) {
                 <div className={style.modalBackdrop}>
                     <Modal 
                     title={activeEntity ? 'Editar Localidad' : 'Crear Localidad'}
-                    children={children}
                     onSubmit={handleSubmit}
                     setActiveEntity={setActiveEntity}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 

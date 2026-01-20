@@ -88,10 +88,11 @@ function PromotionDetailsAdmin({promotionDetails, promotions, unitaryDetails} : 
                 <div className={style.modalBackdrop}>
                     <Modal
                         title={activeEntity ? 'Editar Detalle de Promoción' : 'Crear Detalle de Promoción'}
-                        children={children}
                         setActiveEntity={setActiveEntity}
                         onSubmit={handleSubmit}
-                    />
+                    >
+                        {children}
+                    </Modal>
                 </div>
             }
 
