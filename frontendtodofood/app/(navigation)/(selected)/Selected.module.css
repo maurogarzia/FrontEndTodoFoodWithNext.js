@@ -29,7 +29,16 @@
     width: fit-content;
     margin-left: 150px;
 }
-
+.infoPromotion{
+    display: flex;
+    gap: 5px;
+    border: 1px solid white;
+    padding: 5px;
+}
+.infoPromotion:hover{
+    background-color: gray;
+    transition: 0.2s ease;
+}
 @media (max-width: 800px) {
     .containerInformation{
         display: flex;

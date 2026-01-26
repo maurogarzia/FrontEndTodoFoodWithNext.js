@@ -12,11 +12,13 @@ function ChildrenAddress({localities} : childrenAddressProps) {
 
   return (
     <div className={style.containerData}>
-      {activeEntity?.address.id === null ? 
-        <p>No hay direccion agregada</p>
-        : 
+      
         <div className={style.containerAddress}>
-          <p className={style.address}>{activeEntity?.address.street} {activeEntity?.address.number} ({activeEntity?.address.locality.name})</p>
+          <p className={style.address}>
+            {activeEntity?.address?.id == null ? <p>No hay direcciones agregadas</p> : 
+              <p>{activeEntity?.address?.street} {activeEntity?.address?.number} ({activeEntity?.address?.locality.name})</p>
+            }
+          </p>
 
           <label>Calle</label>
           <input type="text" name="street" required={true}/>
@@ -31,7 +33,7 @@ function ChildrenAddress({localities} : childrenAddressProps) {
             ))}
           </select>
         </div>
-      }
+      
     </div>
   )
 }

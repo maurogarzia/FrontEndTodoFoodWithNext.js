@@ -3,7 +3,6 @@
 import { IPromotionDetails } from '@/types/models/PromotionDetails.model'
 import style from '../Selected.module.css'
 import { promotionStore } from '@/store/Promotion/promotion.store'
-import { useState } from 'react'
 import SelectedPrice from '../components/SelectedPrice/SelectedPrice'
 
 interface SelectedPromotionProps{
@@ -28,6 +27,13 @@ function SelectedPromotion({promotionDetails} : SelectedPromotionProps) {
                 <div className={style.information}>
                     <p className={style.title}>{activeEntity?.name}</p>
                     <p className={style.description}>{activeEntity?.description}</p>
+                    <p>Detalles</p>
+                    {details?.unitaryDetails.map(d => 
+                    <div key={d.id} className={style.infoPromotion}>
+                        <p>{d.quantity}</p>
+                        <p>{d.productDetails.product.name} {d.productDetails.size.name}</p>
+                        
+                    </div>)}
                 </div>
 
                 

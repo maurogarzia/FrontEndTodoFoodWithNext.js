@@ -70,7 +70,7 @@ function ImagesAdmin({images} : ImagesAdminProps) {
             {view && 
                 <div className={style.modalBackdrop}>
                     <Modal
-                        title={activeEntity ? 'Editar Imágen' : 'Crear Imágen'}
+                        title={activeEntity ? 'Editar Imagen' : 'Crear Imagen'}
                         onSubmit={handleSubmit}
                         setActiveEntity={setActiveEntity}
                     >

@@ -22,8 +22,13 @@ function ChildrenPromotionDetails({promotions, unitaryDetails} : ChildrenPromoti
             <label>Descuento</label>
             <input type="text" name='discount' defaultValue={activeEntity?.discount} required={true}/>
 
-            <label>Precio</label>
-            <input type="text" name="price" defaultValue={activeEntity?.price} required={true}/>
+            {activeEntity &&
+                <div style={{width: '100%', textAlign: 'center', display:'flex', flexDirection:'column', gap: '8px'}} >
+                    <label>Precio</label>
+                    <input type="text" name="price" defaultValue={activeEntity?.price} required={true}/>
+                </div>
+            }
+
 
             <label>Promoción</label>
             <select name="promotion" defaultValue={activeEntity?.promotion.id}>

@@ -32,7 +32,7 @@ function ProductsAdmin({products, categories, images} : ProductsAdminProps) {
         {header: "Nombre", accessor: 'name'},
         {header: "Descripción", accessor: 'description'},
         {header: "Categoría", render: (product) => product.category.name},
-        {header: "Id imágen", render: (product) => product.image.id},
+        {header: "Id imagen", render: (product) => product.image.id},
         {header: "Acciones", render: (product) => 
             <Buttons row={product} 
             onEdit={(productSelected) => {

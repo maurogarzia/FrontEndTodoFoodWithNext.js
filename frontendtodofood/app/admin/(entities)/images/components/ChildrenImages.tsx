@@ -10,7 +10,7 @@ function ChildrenImages() {
         <div className={style.containerData}>
             {activeEntity && 
                 <div className={style.previousImage}>
-                    <label htmlFor="">Imágen anterior</label>
+                    <label htmlFor="">Imagen anterior</label>
                     <Image height={100} width={100} alt='' src={activeEntity.url}/>
                 </div>
             }
